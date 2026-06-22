@@ -166,7 +166,7 @@
   }
 
   h1 {
-    font-size: clamp(4rem, 12vw, 9rem);
+    font-size: clamp(4rem, 9vw, 7.5rem);
     line-height: 0.9;
     margin: 10px 0 20px;
   }
@@ -264,10 +264,19 @@
     color: var(--white);
   }
 
-  @media (max-width: 900px) {
-    nav {
-      display: none;
-    }
+ @media (max-width: 900px) {
+  .site-header {
+    padding: 18px 6vw;
+  }
+
+  nav {
+    gap: 12px;
+    font-size: 0.8rem;
+  }
+
+  nav a {
+    font-size: 0.78rem;
+  }
 
     .cards {
       grid-template-columns: 1fr;
