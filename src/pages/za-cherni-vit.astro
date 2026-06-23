@@ -1,16 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
 ---
 
 <BaseLayout
   title="За Черни Вит | Черни Вит"
   description="Информация за село Черни Вит – история, природа и живот."
 >
-  <section class="page">
-    <p class="eyebrow">За селото</p>
-    <h1>За Черни Вит</h1>
-    <p class="lead">
-      Тук ще бъде събрана информация за историята, природата и живота в село Черни Вит.
-    </p>
-  </section>
+  <PageHero
+    eyebrow="За селото"
+    title="За Черни Вит"
+    text="Тук ще бъде събрана информация за историята, природата и живота в село Черни Вит."
+  />
 </BaseLayout>
