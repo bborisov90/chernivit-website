@@ -1,145 +1,75 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="bg">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Черни Вит | Между Балкана, реката и музиката</title>
-    <meta name="description" content="Сайт за село Черни Вит – история, махали, забележителности, зелено сирене, галерия и полезна информация." />
-  </head>
+<BaseLayout
+  title="Черни Вит | Между Балкана, реката и музиката"
+  description="Сайт за село Черни Вит – история, махали, забележителности, зелено сирене, галерия и полезна информация."
+>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Село в Тетевенския Балкан</p>
+      <h1>Черни Вит</h1>
+      <p class="subtitle">Между Балкана, реката и музиката.</p>
+      <a href="/za-cherni-vit" class="button">Разгледай селото</a>
+    </div>
+  </section>
 
-  <body>
-    <header class="site-header">
-      <a href="/" class="logo">Черни Вит</a>
-      <nav>
-        <a href="#discover">Открий</a>
-        <a href="#cheese">Зелено сирене</a>
-        <a href="#gallery">Галерия</a>
-        <a href="#contact">Контакти</a>
-      </nav>
-    </header>
+  <section id="discover" class="section">
+    <p class="eyebrow">Открий Черни Вит</p>
+    <h2>История, природа и традиции</h2>
 
-    <main>
-      <section class="hero">
-        <div class="hero-content">
-          <p class="eyebrow">Село в Тетевенския Балкан</p>
-          <h1>Черни Вит</h1>
-          <p class="subtitle">Между Балкана, реката и музиката.</p>
-          <a href="#discover" class="button">Разгледай селото</a>
-        </div>
-      </section>
+    <div class="cards">
+      <a class="card" href="/za-cherni-vit">
+        <span>01</span>
+        <h3>За селото</h3>
+        <p>Кратко представяне на Черни Вит, природата и живота в селото.</p>
+      </a>
 
-      <section id="discover" class="section">
-        <p class="eyebrow">Открий Черни Вит</p>
-        <h2>История, природа и традиции</h2>
+      <a class="card" href="/mahali">
+        <span>02</span>
+        <h3>Махали</h3>
+        <p>Байовица, Свидола, Ванковци, Миковци, Елов дол и други.</p>
+      </a>
 
-        <div class="cards">
-          <a class="card" href="/za-cherni-vit">
-            <span>01</span>
-            <h3>За селото</h3>
-            <p>Кратко представяне на Черни Вит, природата и живота в селото.</p>
-          </a>
+      <a class="card" href="/zabelezhitelnosti">
+        <span>03</span>
+        <h3>Забележителности</h3>
+        <p>Пещери, паметници, природа и интересни места около селото.</p>
+      </a>
 
-          <a class="card" href="/mahali">
-            <span>02</span>
-            <h3>Махали</h3>
-            <p>Байовица, Свидола, Ванковци, Миковци, Елов дол и други.</p>
-          </a>
+      <a class="card" href="/zeleno-sirene">
+        <span>04</span>
+        <h3>Зелено сирене</h3>
+        <p>Една от най-разпознаваемите традиции, свързвани с Черни Вит.</p>
+      </a>
+    </div>
+  </section>
 
-          <a class="card" href="/zabelezhitelnosti">
-            <span>03</span>
-            <h3>Забележителности</h3>
-            <p>Пещери, паметници, природа и интересни места около селото.</p>
-          </a>
+  <section class="feature">
+    <div>
+      <p class="eyebrow">Уникална традиция</p>
+      <h2>Черновитско зелено сирене</h2>
+      <p>
+        Черни Вит е познат с рядкото зелено сирене — местна традиция,
+        която привлича интерес от цяла България.
+      </p>
+      <a href="/zeleno-sirene" class="text-link">Научи повече →</a>
+    </div>
+  </section>
 
-          <a class="card" href="/zeleno-sirene">
-            <span>04</span>
-            <h3>Зелено сирене</h3>
-            <p>Една от най-разпознаваемите традиции, свързвани с Черни Вит.</p>
-          </a>
-        </div>
-      </section>
-
-      <section id="cheese" class="feature">
-        <div>
-          <p class="eyebrow">Уникална традиция</p>
-          <h2>Черновитско зелено сирене</h2>
-          <p>
-            Черни Вит е познат с рядкото зелено сирене — местна традиция,
-            която привлича интерес от цяла България.
-          </p>
-          <a href="/zeleno-sirene" class="text-link">Научи повече →</a>
-        </div>
-      </section>
-
-      <section id="gallery" class="section muted">
-        <p class="eyebrow">Галерия</p>
-        <h2>Сезони, махали и спомени</h2>
-        <p class="wide">
-          Тук ще съберем снимки от Черни Вит — природа, стари кадри,
-          празници, училището, реката и Балкана.
-        </p>
-      </section>
-    </main>
-
-    <footer id="contact">
-      <strong>Черни Вит</strong>
-      <p>Официален обществен сайт в развитие.</p>
-    </footer>
-  </body>
-</html>
+  <section class="section muted">
+    <p class="eyebrow">Галерия</p>
+    <h2>Сезони, махали и спомени</h2>
+    <p class="wide">
+      Тук ще съберем снимки от Черни Вит — природа, стари кадри,
+      празници, училището, реката и Балкана.
+    </p>
+    <a href="/galeria" class="text-link">Към галерията →</a>
+  </section>
+</BaseLayout>
 
 <style>
-  :root {
-    --green: #1f4d3a;
-    --dark: #13251d;
-    --gold: #d6a756;
-    --cream: #f8f5ef;
-    --white: #ffffff;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--cream);
-    color: var(--dark);
-  }
-
-  .site-header {
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-    padding: 22px 7vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--white);
-  }
-
-  .logo {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1.25rem;
-  }
-
-  nav {
-    display: flex;
-    gap: 22px;
-  }
-
-  nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.95rem;
-  }
-
   .hero {
     min-height: 92vh;
     display: flex;
@@ -155,26 +85,6 @@
 
   .hero-content {
     max-width: 760px;
-  }
-
-  .eyebrow {
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 0.78rem;
-    font-weight: 800;
-  }
-
-  h1 {
-    font-size: clamp(4rem, 9vw, 7.5rem);
-    line-height: 0.9;
-    margin: 10px 0 20px;
-  }
-
-  h2 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1;
-    margin: 10px 0 30px;
   }
 
   .subtitle {
@@ -258,26 +168,7 @@
     line-height: 1.7;
   }
 
-  footer {
-    padding: 50px 7vw;
-    background: var(--dark);
-    color: var(--white);
-  }
-
- @media (max-width: 900px) {
-  .site-header {
-    padding: 18px 6vw;
-  }
-
-  nav {
-    gap: 12px;
-    font-size: 0.8rem;
-  }
-
-  nav a {
-    font-size: 0.78rem;
-  }
-
+  @media (max-width: 900px) {
     .cards {
       grid-template-columns: 1fr;
     }
