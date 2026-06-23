@@ -1,23 +1,110 @@
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Черни Вит</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="/" class="logo">
+        <span>Черни Вит</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="/">Начало</a>
+        <a href="/za-cherni-vit/">За Черни Вит</a>
+        <a href="/mahali/">Махали</a>
+        <a href="/zabelezhitelnosti/">Забележителности</a>
+        <a href="/zeleno-sirene/">Зелено сирене</a>
+        <a href="/galeria/">Галерия</a>
+        <a href="/kontakti/">Контакти</a>
+      </nav>
+    </header>
+
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f7f3ea;
+    color: #2e2a24;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    padding-top: 0;
+  }
+
+  .site-header {
+    width: min(1180px, calc(100% - 32px));
+    margin: 18px auto 0;
+    padding: 14px 18px;
+    border-radius: 999px;
+    background: rgba(255, 250, 240, 0.95);
+    border: 1px solid rgba(74, 57, 35, 0.14);
+    box-shadow: 0 12px 32px rgba(40, 32, 20, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 12px;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+  }
+
+  .site-header .logo {
+    color: #2f4a35;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .site-header .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .site-header .main-nav a {
+    color: #3f3a32;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .site-header .main-nav a:hover {
+    color: #2f4a35;
+  }
+
+  @media (max-width: 900px) {
+    .site-header {
+      border-radius: 24px;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .site-header .main-nav {
+      justify-content: flex-start;
+      gap: 12px 16px;
+    }
+  }
 </style>

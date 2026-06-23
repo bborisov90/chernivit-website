@@ -1,15 +1,213 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHero from "../components/PageHero.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<BaseLayout
-  title="За Черни Вит | Черни Вит"
-  description="Информация за село Черни Вит – история, природа и живот."
->
-  <PageHero
-    eyebrow="За селото"
-    title="За Черни Вит"
-    text="Тук ще бъде събрана информация за историята, природата и живота в село Черни Вит."
-  />
-</BaseLayout>
+<Layout>
+  <main class="about-page">
+    <section class="about-hero">
+      <div>
+        <p class="eyebrow">Село в сърцето на Тетевенския Балкан</p>
+        <h1>За Черни Вит</h1>
+        <p>
+          Между Балкана, реката и вековните традиции — Черни Вит е място,
+          което пази духа на планинския живот.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-grid">
+      <article class="text-card">
+        <h2>Село с история, природа и характер</h2>
+
+        <p>
+          Разположено в полите на Централна Стара планина, по течението на
+          река Черни Вит, село Черни Вит е едно от най-живописните кътчета
+          на Тетевенския Балкан.
+        </p>
+
+        <p>
+          Със своите разпръснати махали, богата история, красива природа и
+          съхранени традиции, селото пази духа на стария български планински
+          живот.
+        </p>
+
+        <p>
+          Черни Вит е известно както с природните си дадености и
+          гостоприемните си хора, така и с уникалното зелено сирене — рядък
+          местен продукт, превърнал се в символ на селото.
+        </p>
+
+        <p>
+          Тук посетителите могат да открият спокойствието на планината,
+          чистия въздух, живописни гледки, стари църкви и параклиси,
+          туристически маршрути и места, съхранили спомена за миналото.
+        </p>
+      </article>
+
+      <aside class="facts-card">
+        <h2>Интересни факти</h2>
+
+        <ul>
+          <li>Намира се в подножието на Централна Стара планина.</li>
+          <li>Част е от община Тетевен.</li>
+          <li>През селото преминава река Черни Вит.</li>
+          <li>Известно е със зеленото сирене от Черни Вит.</li>
+          <li>Има множество махали, разположени по склоновете.</li>
+          <li>Районът е подходящ за разходки и планински туризъм.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="link-cards">
+      <a href="/istoria/" class="link-card">
+        <span>📜</span>
+        <h3>История</h3>
+        <p>Научи повече за миналото на селото.</p>
+      </a>
+
+      <a href="/mahali/" class="link-card">
+        <span>🏡</span>
+        <h3>Махали</h3>
+        <p>Разгледай махалите на Черни Вит.</p>
+      </a>
+
+      <a href="/zabelezhitelnosti/" class="link-card">
+        <span>⛰️</span>
+        <h3>Забележителности</h3>
+        <p>Открий природни и културни места.</p>
+      </a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .about-page {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 28px 0 64px;
+  }
+
+  .about-hero {
+    border-radius: 28px;
+    padding: clamp(40px, 8vw, 90px);
+    box-shadow: 0 24px 60px rgba(40, 32, 20, 0.16);
+    margin-bottom: 32px;
+    background:
+      linear-gradient(rgba(23, 38, 29, 0.55), rgba(23, 38, 29, 0.65)),
+      url("/images/village.jpg") center / cover;
+    color: white;
+  }
+
+  .about-hero div {
+    max-width: 760px;
+  }
+
+  .eyebrow {
+    margin: 0 0 12px;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  .about-hero h1 {
+    margin: 0 0 16px;
+    font-size: clamp(2.1rem, 5vw, 4.5rem);
+    line-height: 1;
+  }
+
+  .about-hero p {
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    line-height: 1.6;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .text-card,
+  .facts-card,
+  .link-card {
+    background: #fffaf0;
+    border: 1px solid rgba(74, 57, 35, 0.12);
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(40, 32, 20, 0.08);
+  }
+
+  .text-card {
+    padding: clamp(24px, 4vw, 44px);
+  }
+
+  .text-card h2,
+  .facts-card h2 {
+    margin-top: 0;
+    color: #2f4a35;
+  }
+
+  .text-card p {
+    color: #3f3a32;
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .facts-card {
+    padding: 28px;
+  }
+
+  .facts-card ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+  }
+
+  .facts-card li {
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .link-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .link-card {
+    display: block;
+    padding: 26px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .link-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .link-card span {
+    font-size: 2rem;
+  }
+
+  .link-card h3 {
+    margin: 14px 0 8px;
+    color: #2f4a35;
+  }
+
+  .link-card p {
+    margin: 0;
+    line-height: 1.5;
+    color: #5a5144;
+  }
+
+  @media (max-width: 820px) {
+    .about-grid,
+    .link-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .about-hero {
+      border-radius: 22px;
+    }
+  }
+</style>
