@@ -13,12 +13,19 @@ const { title, description } = Astro.props;
   <body>
     <header class="site-header">
       <a href="/" class="logo">Черни Вит</a>
-      <nav>
+
+      <button class="menu-button" aria-label="Отвори меню" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="site-nav">
         <a href="/za-cherni-vit">За Черни Вит</a>
         <a href="/mahali">Махали</a>
         <a href="/zabelezhitelnosti">Забележителности</a>
         <a href="/zeleno-sirene">Зелено сирене</a>
+        <a href="/uchilishte">Училище</a>
         <a href="/galeria">Галерия</a>
+        <a href="/novini">Новини</a>
         <a href="/kontakti">Контакти</a>
       </nav>
     </header>
@@ -31,6 +38,19 @@ const { title, description } = Astro.props;
       <strong>Черни Вит</strong>
       <p>Официален обществен сайт в развитие.</p>
     </footer>
+
+    <script>
+      const button = document.querySelector(".menu-button");
+      const nav = document.querySelector(".site-nav");
+
+      button?.addEventListener("click", () => {
+        nav?.classList.toggle("is-open");
+
+        const isOpen = nav?.classList.contains("is-open");
+        button.setAttribute("aria-expanded", String(isOpen));
+        button.textContent = isOpen ? "×" : "☰";
+      });
+    </script>
   </body>
 </html>
 
@@ -43,7 +63,9 @@ const { title, description } = Astro.props;
     --white: #ffffff;
   }
 
-  * { box-sizing: border-box; }
+  * {
+    box-sizing: border-box;
+  }
 
   body {
     margin: 0;
@@ -73,22 +95,48 @@ const { title, description } = Astro.props;
     white-space: nowrap;
   }
 
-  nav {
+  .menu-button {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--white);
+    font-size: 1.7rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .site-nav {
     display: flex;
     gap: 18px;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
 
-  nav a {
+  .site-nav a {
     color: var(--white);
     text-decoration: none;
     font-size: 0.92rem;
   }
 
   .page {
-    padding: 90px 7vw;
-    min-height: 70vh;
+    padding: 70px 7vw;
+    min-height: 62vh;
+  }
+
+  .page h1 {
+    font-size: clamp(2.3rem, 4.5vw, 4.2rem);
+    line-height: 1.05;
+    margin: 10px 0 24px;
+    max-width: 900px;
+  }
+
+  .lead {
+    max-width: 760px;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.7;
   }
 
   .eyebrow {
@@ -99,18 +147,6 @@ const { title, description } = Astro.props;
     font-weight: 800;
   }
 
-  h1 {
-    font-size: clamp(3rem, 7vw, 6rem);
-    line-height: 0.95;
-    margin: 10px 0 24px;
-  }
-
-  .lead {
-    max-width: 760px;
-    font-size: 1.25rem;
-    line-height: 1.7;
-  }
-
   footer {
     padding: 50px 7vw;
     background: var(--dark);
@@ -119,17 +155,47 @@ const { title, description } = Astro.props;
 
   @media (max-width: 900px) {
     .site-header {
-      align-items: flex-start;
+      align-items: center;
+      flex-direction: row;
       gap: 16px;
+    }
+
+    .menu-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .site-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 16px 7vw 22px;
+      background: var(--dark);
       flex-direction: column;
+      gap: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    nav {
-      justify-content: flex-start;
+    .site-nav.is-open {
+      display: flex;
     }
 
-    nav a {
-      font-size: 0.85rem;
+    .site-nav a {
+      font-size: 1rem;
+      padding: 6px 0;
+    }
+
+    .page {
+      padding: 50px 7vw;
+      min-height: 55vh;
+    }
+
+    .page h1 {
+      font-size: clamp(2.1rem, 9vw, 3.1rem);
+      line-height: 1.05;
     }
   }
 </style>
