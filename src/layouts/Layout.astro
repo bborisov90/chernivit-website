@@ -17,15 +17,19 @@ const navItems = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+
+    <link rel="icon" type="image/png" href="/logo-cherni-vit.png" />
+
     <meta name="generator" content={Astro.generator} />
     <title>Черни Вит</title>
   </head>
 
   <body>
     <header class="site-header">
-      <a href="/" class="site-logo">Черни Вит</a>
+      <a href="/" class="site-logo" aria-label="Начало">
+        <img src="/logo-cherni-vit.png" alt="Лого Черни Вит" />
+        <span>Черни Вит</span>
+      </a>
 
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
 
@@ -79,11 +83,25 @@ const navItems = [
   }
 
   .site-logo {
-    color: #fffaf0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
-    font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+    color: #fffaf0;
+    font-size: clamp(1.25rem, 2.2vw, 1.65rem);
     font-weight: 700;
     white-space: nowrap;
+  }
+
+  .site-logo img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .site-logo span {
+    line-height: 1;
   }
 
   .site-nav {
@@ -101,6 +119,7 @@ const navItems = [
     font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.2;
+    transition: color .25s ease;
   }
 
   .site-nav a:hover {
@@ -116,6 +135,15 @@ const navItems = [
     .site-header {
       min-height: 82px;
       padding: 0 28px;
+    }
+
+    .site-logo img {
+      width: 44px;
+      height: 44px;
+    }
+
+    .site-logo span {
+      font-size: 1.25rem;
     }
 
     .nav-button {
@@ -137,7 +165,7 @@ const navItems = [
       height: 3px;
       border-radius: 999px;
       background: #fffaf0;
-      transition: 0.2s ease;
+      transition: .2s ease;
     }
 
     .site-nav {
@@ -148,8 +176,8 @@ const navItems = [
       right: 0;
       padding: 22px 28px 28px;
       background: #10291d;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 22px 48px rgba(16, 41, 29, 0.35);
+      border-top: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 22px 48px rgba(16,41,29,.35);
       flex-direction: column;
       align-items: flex-start;
       gap: 0;
@@ -161,10 +189,9 @@ const navItems = [
       width: 100%;
       padding: 15px 0;
       color: #fffaf0;
-      font-family: Arial, sans-serif;
       font-size: 1.15rem;
       font-weight: 500;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255,255,255,.12);
     }
 
     .site-nav a:last-child {
@@ -187,4 +214,25 @@ const navItems = [
       transform: translateY(-8px) rotate(-45deg);
     }
   }
+
+  .site-logo {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  color: #fffaf0;
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.site-logo img {
+  width: 54px !important;
+  height: 54px !important;
+  object-fit: contain;
+  display: block;
+}
+
+.site-logo span {
+  color: #fffaf0;
+}
 </style>
