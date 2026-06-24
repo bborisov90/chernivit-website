@@ -1,3 +1,17 @@
+---
+const navItems = [
+  { href: "/", label: "Начало" },
+  { href: "/za-cherni-vit/", label: "За Черни Вит" },
+  { href: "/mahali/", label: "Махали" },
+  { href: "/zabelezhitelnosti/", label: "Забележителности" },
+  { href: "/zeleno-sirene/", label: "Зелено сирене" },
+  { href: "/uchilishte/", label: "Училище" },
+  { href: "/galeria/", label: "Галерия" },
+  { href: "/novini/", label: "Новини" },
+  { href: "/kontakti/", label: "Контакти" },
+];
+---
+
 <!doctype html>
 <html lang="bg">
   <head>
@@ -11,16 +25,23 @@
 
   <body>
     <header class="site-header">
-      <a href="/" class="logo">
-        <span>Черни Вит</span>
-      </a>
+      <a href="/" class="site-logo">Черни Вит</a>
 
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-      <label for="menu-toggle" class="menu-button">
-        ☰
-  </label>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
 
-<nav class="main-nav">
+      <label for="nav-toggle" class="nav-button" aria-label="Отвори меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="site-nav" aria-label="Основно меню">
+        {
+          navItems.map((item) => (
+            <a href={item.href}>{item.label}</a>
+          ))
+        }
+      </nav>
     </header>
 
     <slot />
@@ -31,7 +52,6 @@
   html,
   body {
     margin: 0;
-    width: 100%;
     min-height: 100%;
     font-family: Georgia, "Times New Roman", serif;
     background: #f7f3ea;
@@ -42,29 +62,25 @@
     box-sizing: border-box;
   }
 
-  body {
-    padding-top: 0;
-  }
-
   .site-header {
     width: min(1180px, calc(100% - 32px));
     margin: 18px auto 0;
     padding: 14px 18px;
     border-radius: 999px;
-    background: rgba(255, 250, 240, 0.95);
+    background: rgba(255, 250, 240, 0.96);
     border: 1px solid rgba(74, 57, 35, 0.14);
     box-shadow: 0 12px 32px rgba(40, 32, 20, 0.08);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 18px;
     position: sticky;
     top: 12px;
     z-index: 999;
     backdrop-filter: blur(10px);
   }
 
-  .site-header .logo {
+  .site-logo {
     color: #2f4a35;
     text-decoration: none;
     font-size: 1.25rem;
@@ -72,69 +88,102 @@
     white-space: nowrap;
   }
 
-  .site-header .main-nav {
+  .site-nav {
     display: flex;
     align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
     justify-content: flex-end;
+    gap: 14px;
+    flex-wrap: wrap;
   }
 
-  .site-header .main-nav a {
+  .site-nav a {
     color: #3f3a32;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.94rem;
     font-weight: 600;
     line-height: 1.2;
   }
 
-  .site-header .main-nav a:hover {
+  .site-nav a:hover {
     color: #2f4a35;
   }
 
-  @media (max-width: 900px) {
-  .site-header {
-    border-radius: 24px;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .menu-button {
-    display: block;
-  }
-
-  .main-nav {
+  .nav-toggle,
+  .nav-button {
     display: none;
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    right: 0;
-
-    background: rgba(255, 250, 240, 0.98);
-    border-radius: 20px;
-    padding: 16px;
-
-    box-shadow: 0 16px 40px rgba(40, 32, 20, 0.15);
-
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
   }
 
-  .menu-toggle:checked ~ .main-nav {
-    display: flex;
-  }
+  @media (max-width: 900px) {
+    .site-header {
+      border-radius: 999px;
+      padding: 13px 18px;
+      position: sticky;
+      top: 10px;
+    }
 
-  .main-nav a {
-    width: 100%;
-  }
-}
+    .nav-button {
+      width: 34px;
+      height: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+    }
 
-.menu-button {
-  display: none;
-  cursor: pointer;
-  font-size: 1.8rem;
-  color: #2f4a35;
-}
+    .nav-button span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      border-radius: 999px;
+      background: #2f4a35;
+      transition: 0.2s ease;
+    }
+
+    .site-nav {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      right: 0;
+      padding: 20px;
+      border-radius: 24px;
+      background: #10291d;
+      box-shadow: 0 20px 48px rgba(16, 41, 29, 0.28);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .site-nav a {
+      width: 100%;
+      padding: 14px 4px;
+      color: #fffaf0;
+      font-family: Arial, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .site-nav a:last-child {
+      border-bottom: 0;
+    }
+
+    .nav-toggle:checked ~ .site-nav {
+      display: flex;
+    }
+
+    .nav-toggle:checked + .nav-button span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-toggle:checked + .nav-button span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle:checked + .nav-button span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
   }
 </style>
