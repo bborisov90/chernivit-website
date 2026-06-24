@@ -1,15 +1,124 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHero from "../components/PageHero.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<BaseLayout
-  title="Забележителности | Черни Вит"
-  description="Забележителности, природни места и интересни обекти около Черни Вит."
->
-  <PageHero
-    eyebrow="Забележителности"
-    title="Забележителности"
-    text="Тук ще съберем природни места, пещери, паметници, стари сгради, гледки и интересни маршрути около Черни Вит."
-  />
-</BaseLayout>
+<Layout>
+  <main class="places-page">
+    <section class="places-hero">
+      <p class="eyebrow">Природа, история и красиви гледки</p>
+      <h1>Забележителности</h1>
+      <p>
+        Черни Вит и околностите му предлагат съчетание от природни красоти,
+        исторически места и кътчета, съхранили духа на Тетевенския Балкан.
+      </p>
+    </section>
+
+    <section class="places-grid">
+
+      <article class="place-card">
+        <h2>🌊 Река Черни Вит</h2>
+        <p>
+          Реката преминава през селото и е неразделна част от неговата история.
+          През всички сезони тя придава особен облик на Черни Вит и създава
+          красиви места за разходка и почивка.
+        </p>
+      </article>
+
+      <article class="place-card">
+        <h2>⛰️ Панорамни гледки към Балкана</h2>
+        <p>
+          От различни части на селото и околните височини се разкриват
+          впечатляващи гледки към Тетевенския Балкан, реката и разпръснатите
+          махали.
+        </p>
+      </article>
+
+      <article class="place-card">
+        <h2>🏰 Местността Чертиград</h2>
+        <p>
+          Според исторически сведения тук се е намирало древно тракийско
+          укрепление. Мястото е сред най-интересните исторически обекти в
+          землището на Черни Вит.
+        </p>
+      </article>
+
+      <article class="place-card">
+        <h2>⛪ Църквата в Черни Вит</h2>
+        <p>
+          Храмът е важен духовен център за местната общност и пази спомена за
+          поколения жители на селото.
+        </p>
+      </article>
+
+      <article class="place-card">
+        <h2>🌲 Планински маршрути</h2>
+        <p>
+          Районът предлага възможности за пешеходен туризъм, разходки сред
+          горите и достигане до красиви панорамни места.
+        </p>
+      </article>
+
+      <article class="place-card">
+        <h2>🧀 Зеленото сирене</h2>
+        <p>
+          Макар да е известен като местен продукт, зеленото сирене е и част от
+          културното наследство на Черни Вит и една от най-разпознаваемите
+          местни традиции.
+        </p>
+      </article>
+
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .places-page {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 28px 0 64px;
+  }
+
+  .places-hero {
+    border-radius: 28px;
+    padding: clamp(40px, 8vw, 90px);
+    margin-bottom: 28px;
+    background:
+      linear-gradient(rgba(23,38,29,.6), rgba(23,38,29,.75)),
+      url("/images/village.jpg") center / cover;
+    color: white;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .9rem;
+  }
+
+  .places-hero h1 {
+    margin: 12px 0;
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+  }
+
+  .places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  .place-card {
+    background: #fffaf0;
+    border-radius: 24px;
+    padding: 30px;
+    border: 1px solid rgba(74,57,35,.12);
+    box-shadow: 0 16px 40px rgba(40,32,20,.08);
+  }
+
+  .place-card h2 {
+    margin-top: 0;
+    color: #2f4a35;
+  }
+
+  .place-card p {
+    line-height: 1.8;
+  }
+</style>

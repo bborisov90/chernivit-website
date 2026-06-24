@@ -1,15 +1,114 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHero from "../components/PageHero.astro";
+import Layout from "../layouts/Layout.astro";
+
+const photos = [
+  { src: "/images/village.jpg", title: "Поглед към Черни Вит", category: "Село" },
+  { src: "/images/winter.jpg", title: "Зимен Черни Вит", category: "Природа" },
+  { src: "/images/river.jpg", title: "Река Черни Вит", category: "Природа" },
+  { src: "/images/church.jpg", title: "Църквата", category: "Забележителности" },
+  { src: "/images/mountains.jpg", title: "Балканът над селото", category: "Планина" },
+  { src: "/images/cheese.jpg", title: "Зелено сирене", category: "Традиции" },
+];
 ---
 
-<BaseLayout
-  title="Галерия | Черни Вит"
-  description="Галерия със снимки от Черни Вит – природа, махали, празници и спомени."
->
-  <PageHero
-    eyebrow="Галерия"
-    title="Галерия"
-    text="Тук ще добавяме снимки от Черни Вит – природа, махали, стари кадри, празници, училището, реката и Балкана."
-  />
-</BaseLayout>
+<Layout>
+  <main class="gallery-page">
+    <section class="gallery-hero">
+      <p class="eyebrow">Снимки от селото и Балкана</p>
+      <h1>Галерия</h1>
+      <p>
+        Красотата на Черни Вит през сезоните — природа, махали, река,
+        традиции и места, които пазят духа на селото.
+      </p>
+    </section>
+
+    <section class="gallery-grid">
+      {
+        photos.map((photo) => (
+          <article class="photo-card">
+            <img src={photo.src} alt={photo.title} loading="lazy" />
+            <div class="photo-info">
+              <span>{photo.category}</span>
+              <h2>{photo.title}</h2>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .gallery-page {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 28px 0 64px;
+  }
+
+  .gallery-hero {
+    border-radius: 28px;
+    padding: clamp(40px, 8vw, 90px);
+    margin-bottom: 28px;
+    background:
+      linear-gradient(rgba(23, 38, 29, 0.6), rgba(23, 38, 29, 0.75)),
+      url("/images/village.jpg") center / cover;
+    color: white;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+  }
+
+  .gallery-hero h1 {
+    margin: 12px 0;
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+  }
+
+  .gallery-hero p {
+    max-width: 760px;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    line-height: 1.6;
+  }
+
+  .gallery-grid {
+    columns: 3 280px;
+    column-gap: 20px;
+  }
+
+  .photo-card {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 20px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #fffaf0;
+    box-shadow: 0 16px 40px rgba(40, 32, 20, 0.1);
+    break-inside: avoid;
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .photo-info {
+    padding: 18px 20px 22px;
+  }
+
+  .photo-info span {
+    color: #6d7b4f;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+
+  .photo-info h2 {
+    margin: 8px 0 0;
+    color: #2f4a35;
+    font-size: 1.25rem;
+  }
+</style>
