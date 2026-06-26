@@ -1,139 +1,302 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import InfoCard from "../components/InfoCard.astro";
 ---
 
-<Layout>
+<Layout
+  title="История на Черни Вит | Село Черни Вит"
+  description="История на село Черни Вит – минало, поминък, традиции, махали, река Черни Вит и зеленото сирене."
+>
+  <PageHero
+    eyebrow="Минало, памет и местен дух"
+    title="История на Черни Вит"
+    text="Историята на Черни Вит е история на планината, реката, махалите, труда и хората, които поколения наред са пазили живота в това красиво кътче на Тетевенския Балкан."
+    image="/images/village.jpg"
+  />
+
   <main class="history-page">
-    <section class="history-hero">
-      <p class="eyebrow">Минало, памет и традиции</p>
-      <h1>История на Черни Вит</h1>
+    <section class="history-intro">
+      <div class="history-text-card">
+        <h2>Село, израснало край реката и Балкана</h2>
+
+        <p>
+          Черни Вит е село в Северна България, разположено в община Тетевен,
+          област Ловеч. То носи името на река Черни Вит, която преминава през
+          района и е част от природната и историческата идентичност на селото.
+        </p>
+
+        <p>
+          Разположението в полите на Стара планина е оформило начина на живот
+          на местните хора. Планинският релеф, горите, пасищата и реката са
+          дали условия за живот, поминък, животновъдство, земеделие и
+          занаятчийски труд.
+        </p>
+
+        <p>
+          В миналото животът в Черни Вит е бил тясно свързан с махалите.
+          Разпръснатите къщи, родовите имена, пътеките между тях и близостта
+          до природата са създали особен характер на селото — едновременно
+          общностно, но и дълбоко свързано с отделните родове и места.
+        </p>
+      </div>
+
+      <aside class="history-facts-card">
+        <h2>Накратко</h2>
+
+        <ul>
+          <li>Черни Вит се намира в община Тетевен, област Ловеч.</li>
+          <li>Селото е свързано с река Черни Вит.</li>
+          <li>Районът е планински и богат на гори, пасища и природни места.</li>
+          <li>Махалите са важна част от местната история и памет.</li>
+          <li>Селото е известно със зеленото сирене от Черни Вит.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="timeline-section">
+      <h2>Исторически пластове</h2>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <span>Планината и реката</span>
+          <h3>Природната основа на селото</h3>
+          <p>
+            Преди всичко Черни Вит е място, определено от природата. Реката,
+            долината, горите и старопланинските склонове са създали условията,
+            около които постепенно се оформя животът на селото.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <span>Старият поминък</span>
+          <h3>Животновъдство, земеделие и труд</h3>
+          <p>
+            Планинските пасища и ливади са били важни за отглеждането на
+            животни. Хората са разчитали на земята, гората, млякото, сиренето,
+            дървото и сезонния труд. Този начин на живот е оставил следи в
+            местните традиции и спомени.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <span>Махалите</span>
+          <h3>Родова памет и разпръснат живот</h3>
+          <p>
+            Махалите са една от най-характерните особености на Черни Вит.
+            В тях се пазят имена, истории, семейни връзки, стари пътища,
+            места и спомени. Именно те дават на селото неговия жив и
+            разпознаваем облик.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <span>XX век</span>
+          <h3>Промени, училище и обществен живот</h3>
+          <p>
+            През XX век селото преминава през промени, характерни за много
+            български планински села — развитие на училището, читалищния и
+            обществения живот, промени в поминъка и постепенно намаляване на
+            населението.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <span>Днес</span>
+          <h3>Памет, природа и нов интерес</h3>
+          <p>
+            Днес Черни Вит привлича внимание със своята природа, история,
+            спокойствие, махали и уникалното зелено сирене. Все повече хора
+            търсят връзка с корените си, с местната памет и с автентичния
+            живот в Балкана.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="heritage-section">
+      <div class="heritage-card">
+        <h2>Зеленото сирене — част от историята на селото</h2>
+
+        <p>
+          Една от най-разпознаваемите истории, свързани с Черни Вит, е тази
+          за зеленото сирене. То се появява като естествен резултат от стария
+          начин на съхранение на сирене в дървени съдове и от особените
+          условия в района.
+        </p>
+
+        <p>
+          Тази традиция превръща Черни Вит в име, познато далеч извън
+          пределите на селото. Зеленото сирене не е просто храна, а част от
+          паметта за стария поминък, животновъдството и умението на местните
+          хора да използват даденостите на природата.
+        </p>
+      </div>
+    </section>
+
+    <section class="memory-section">
+      <h2>Да съхраним живата памет</h2>
+
       <p>
-        Историята на Черни Вит е история на планината, реката, старите махали
-        и хората, които са съхранили духа на селото през вековете.
+        Историята на Черни Вит не е само в книгите и документите. Тя е и в
+        разказите на възрастните хора, в старите снимки, в имената на местата,
+        в семейните спомени, в махалите и в пътеките, по които поколения са
+        минавали.
+      </p>
+
+      <p>
+        Затова тази страница може да се развива с времето. Всеки разказ,
+        снимка или спомен може да помогне историята на селото да остане жива
+        и достъпна за следващите поколения.
       </p>
     </section>
 
-    <section class="history-content">
-      <article class="history-card">
-        <h2>Древни следи</h2>
-        <p>
-          Землището на Черни Вит е обитавано още преди новата ера. Един от
-          най-интересните обекти в района е местността Чертиград, където според
-          сведенията е имало тракийско укрепление, защитено от естествени
-          скали и крепостна стена.
-        </p>
-      </article>
+    <section class="link-cards">
+      <InfoCard
+        href="/mahali/"
+        icon="🏡"
+        title="Махали"
+        text="Разгледай махалите и местните истории, свързани с тях."
+      />
 
-      <article class="history-card">
-        <h2>Село в Тетевенския Балкан</h2>
-        <p>
-          Черни Вит се развива като планинско селище в района на Тетевен.
-          Разпръснатите махали, близостта до реката и планинските пасища
-          оформят начина на живот на местните хора — свързан със земеделие,
-          животновъдство, гората и традиционния селски бит.
-        </p>
-      </article>
+      <InfoCard
+        href="/zabelezhitelnosti/"
+        icon="⛰️"
+        title="Забележителности"
+        text="Открий природни и културни места около Черни Вит."
+      />
 
-      <article class="history-card">
-        <h2>Самостоятелност и местна памет</h2>
-        <p>
-          Важна дата за селото е 15 декември 1914 г., когато с Указ №557
-          Черни Вит е обявено за самостоятелна административна единица.
-          Днес тази дата се помни като значим момент от историята на селото.
-        </p>
-      </article>
-
-      <article class="history-card">
-        <h2>Зеленото сирене и старият поминък</h2>
-        <p>
-          Черни Вит е известен и със своето зелено сирене. То е свързано със
-          стария овчарски начин на живот — с високопланинските пасища,
-          дървените качета, избите и естественото зреене на сиренето.
-          С времето този местен продукт се превръща в един от символите на
-          селото.
-        </p>
-      </article>
-
-      <article class="history-card">
-        <h2>Черни Вит днес</h2>
-        <p>
-          Днес Черни Вит пази спомена за своето минало чрез местните празници,
-          паметниците, училището, читалището, махалите и живите разкази на
-          хората. Историята на селото продължава да бъде част от неговата
-          идентичност и от връзката между поколенията.
-        </p>
-      </article>
+      <InfoCard
+        href="/zeleno-sirene/"
+        icon="🧀"
+        title="Зелено сирене"
+        text="Научи повече за най-разпознаваемия местен продукт."
+      />
     </section>
   </main>
 </Layout>
 
 <style>
   .history-page {
-    width: min(1120px, calc(100% - 32px));
+    width: var(--container);
     margin: 0 auto;
-    padding: 28px 0 64px;
+    padding: 0 0 64px;
   }
 
-  .history-hero {
-    border-radius: 28px;
-    padding: clamp(40px, 8vw, 90px);
-    margin-bottom: 28px;
-    background:
-      linear-gradient(rgba(23, 38, 29, 0.62), rgba(23, 38, 29, 0.72)),
-      url("/images/winter.jpg") center / cover;
-    color: white;
-    box-shadow: 0 24px 60px rgba(40, 32, 20, 0.16);
-  }
-
-  .eyebrow {
-    margin: 0 0 12px;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.9;
-  }
-
-  .history-hero h1 {
-    margin: 0 0 16px;
-    font-size: clamp(2.1rem, 5vw, 4.5rem);
-    line-height: 1;
-  }
-
-  .history-hero p {
-    max-width: 760px;
-    font-size: clamp(1.05rem, 2vw, 1.35rem);
-    line-height: 1.6;
-  }
-
-  .history-content {
+  .history-intro {
     display: grid;
-    gap: 20px;
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+    gap: 24px;
+    align-items: start;
   }
 
-  .history-card {
-    background: #fffaf0;
+  .history-text-card,
+  .history-facts-card,
+  .heritage-card,
+  .memory-section,
+  .timeline-item {
+    background: var(--color-card);
     border: 1px solid rgba(74, 57, 35, 0.12);
     border-radius: 24px;
-    padding: clamp(24px, 4vw, 40px);
     box-shadow: 0 16px 40px rgba(40, 32, 20, 0.08);
   }
 
-  .history-card h2 {
-    margin-top: 0;
-    color: #2f4a35;
-    font-size: clamp(1.5rem, 3vw, 2.1rem);
+  .history-text-card,
+  .heritage-card,
+  .memory-section {
+    padding: clamp(24px, 4vw, 44px);
   }
 
-  .history-card p {
-    margin-bottom: 0;
+  .history-facts-card {
+    padding: 28px;
+  }
+
+  .history-text-card h2,
+  .history-facts-card h2,
+  .timeline-section h2,
+  .heritage-card h2,
+  .memory-section h2 {
+    margin-top: 0;
+    color: var(--color-green-light);
+  }
+
+  .history-text-card p,
+  .heritage-card p,
+  .memory-section p {
     color: #3f3a32;
-    font-size: 1.08rem;
+    font-size: 1.05rem;
     line-height: 1.85;
   }
 
+  .history-facts-card ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+  }
+
+  .history-facts-card li {
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .timeline-section {
+    margin-top: 42px;
+  }
+
+  .timeline-section h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+  }
+
+  .timeline {
+    display: grid;
+    gap: 18px;
+  }
+
+  .timeline-item {
+    padding: 26px;
+    position: relative;
+  }
+
+  .timeline-item span {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--color-gold);
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .timeline-item h3 {
+    margin: 0 0 10px;
+    color: var(--color-green-light);
+  }
+
+  .timeline-item p {
+    margin: 0;
+    color: var(--color-muted);
+    line-height: 1.75;
+  }
+
+  .heritage-section {
+    margin-top: 42px;
+  }
+
+  .memory-section {
+    margin-top: 42px;
+  }
+
+  .link-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+  }
+
   @media (max-width: 820px) {
-    .history-hero {
-      border-radius: 22px;
+    .history-intro,
+    .link-cards {
+      grid-template-columns: 1fr;
     }
   }
 </style>
