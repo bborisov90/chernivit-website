@@ -2,150 +2,310 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-  <main class="cheese-page">
-    <section class="cheese-hero">
-      <p class="eyebrow">Уникална традиция от Черни Вит</p>
-      <h1>Зеленото сирене</h1>
+<Layout
+  title="Зеленото сирене от Черни Вит | Уникална традиция"
+  description="Историята на Зеленото сирене от Черни Вит – уникална местна традиция, почти изгубена и възродена отново."
+>
+  <section class="cheese-hero">
+    <div class="cheese-hero__overlay"></div>
+
+    <div class="cheese-hero__content">
+      <p class="cheese-kicker">Уникална традиция от Тетевенския Балкан</p>
+
+      <h1>Зеленото сирене от Черни Вит</h1>
+
+      <p class="cheese-lead">
+        Една случайна плесен. Една почти изгубена традиция.
+        Един вкус, познат далеч отвъд селото.
+      </p>
+
+      <a href="#story" class="cheese-button">Разкажете ми историята</a>
+    </div>
+  </section>
+
+  <main id="story" class="cheese-page">
+    <section class="chapter chapter-intro">
+      <p class="chapter-number">I</p>
+      <h2>Преди сиренето беше селото</h2>
+
       <p>
-        Един от най-редките и интересни млечни продукти в България,
-        превърнал се в символ на Черни Вит и на местните традиции.
+        Преди повече от век, високо в Тетевенския Балкан, животът в Черни Вит
+        следвал ритъма на природата. Денят започвал рано, стадата поемали към
+        пасищата, а вечер млякото се превръщало в сирене — така, както
+        поколения преди това били правили.
+      </p>
+
+      <p>
+        Никой тогава не е можел да предположи, че именно този обикновен
+        ежедневен труд ще даде началото на една от най-необичайните кулинарни
+        истории в България.
       </p>
     </section>
 
-    <section class="content-grid">
-      <article class="content-card">
-        <h2>Какво представлява?</h2>
+    <section class="quote-block">
+      <p>
+        Черни Вит не създава Зеленото сирене.
+        Черни Вит създава условията то да се появи.
+      </p>
+    </section>
 
-        <p>
-          Зеленото сирене от Черни Вит е традиционно овче сирене,
-          известно със своя естествен зеленосин оттенък, който се
-          получава при специфични условия на съхранение и зреене.
-        </p>
+    <section class="chapter">
+      <p class="chapter-number">II</p>
+      <h2>Дървеното каче</h2>
 
-        <p>
-          В продължение на десетилетия местните хора произвеждали
-          сиренето за собствена употреба, без да подозират, че
-          то представлява рядък продукт, който по-късно ще привлече
-          вниманието на специалисти и любители на традиционните храни.
-        </p>
-      </article>
+      <p>
+        Старото сирене се съхранявало в дървени качета. С времето част от
+        саламурата се отцеждала, а хладните и влажни условия в балканските
+        изби създавали среда, в която върху сиренето започвала да се развива
+        естествена благородна плесен.
+      </p>
 
-      <article class="content-card">
-        <h2>Как се е появило?</h2>
+      <p>
+        Първоначално зеленикавият цвят не бил търсен ефект. За някои хора той
+        бил знак, че сиренето е развалено. Но постепенно местните открили, че
+        зад необичайния външен вид стои различен, наситен и запомнящ се вкус.
+      </p>
+    </section>
 
-        <p>
-          Произходът на зеленото сирене е свързан с овцевъдството в
-          Тетевенския Балкан. След приготвянето си сиренето се
-          съхранявало в дървени съдове и прохладни помещения,
-          където при определени условия протичали естествени процеси
-          на зреене.
-        </p>
+    <section class="process-strip">
+      <div>🐑<span>овце</span></div>
+      <div>🥛<span>мляко</span></div>
+      <div>🪵<span>каче</span></div>
+      <div>🌿<span>плесен</span></div>
+      <div>🧀<span>сирене</span></div>
+    </section>
 
-        <p>
-          Именно тези условия създавали характерния цвят и аромат,
-          които днес отличават продукта от всички останали сирена.
-        </p>
-      </article>
+    <section class="chapter">
+      <p class="chapter-number">III</p>
+      <h2>Един почти изгубен вкус</h2>
 
-      <article class="content-card">
-        <h2>Защо е зелено?</h2>
+      <p>
+        С времето животът се променил. Дървените съдове били заменени с други,
+        начинът на производство се модернизирал, а старите практики постепенно
+        останали в миналото. Така Зеленото сирене почти изчезнало от живота на
+        селото.
+      </p>
 
-        <p>
-          Зеленикавият цвят се дължи на естествени плесени,
-          които се развиват по време на зреенето.
-          Това не е резултат от оцветители или добавки,
-          а от специфичната среда и традиционния начин на съхранение.
-        </p>
+      <p>
+        Днес тази история е ценна именно защото е била на прага да бъде
+        забравена. Тя напомня колко лесно една традиция може да се изгуби, ако
+        няма кой да я помни, разказва и продължава.
+      </p>
+    </section>
 
-        <p>
-          Именно тази особеност прави сиренето уникално и различно
-          от масово произвежданите млечни продукти.
-        </p>
-      </article>
+    <section class="chapter highlight-chapter">
+      <p class="chapter-number">IV</p>
+      <h2>Възраждането</h2>
 
-      <article class="content-card">
-        <h2>Възраждане на традицията</h2>
+      <p>
+        В началото на XXI век Зеленото сирене от Черни Вит отново привлича
+        внимание. Благодарение на интереса на Slow Food и усилията на местни
+        хора, традицията започва да се възстановява и да се представя пред
+        по-широка публика.
+      </p>
 
-        <p>
-          В началото на XXI век интересът към зеленото сирене
-          отново се възражда. Благодарение на усилията на местни
-          производители, изследователи и жители на селото,
-          традицията е съхранена и представена пред по-широка публика.
-        </p>
+      <p>
+        Днес най-разпознаваемото име, свързано със съхраняването на тази
+        традиция, е Цветан Димитров — човекът, който продължава да пази
+        знанието, вкуса и историята на Зеленото сирене в Черни Вит.
+      </p>
+    </section>
 
-        <p>
-          Днес зеленото сирене е сред най-разпознаваемите символи
-          на Черни Вит и привлича интереса на посетители от България
-          и чужбина.
-        </p>
-      </article>
+    <section class="memory-callout">
+      <h2>Историята продължава</h2>
 
-      <article class="fact-box">
-        <h2>Интересни факти</h2>
+      <p>
+        Имате ли снимка, спомен, дървено каче, документ или разказ, свързан
+        със Зеленото сирене? Тази страница ще се развива с времето, за да пази
+        живата памет на Черни Вит.
+      </p>
 
-        <ul>
-          <li>Произвежда се по традиционна местна технология.</li>
-          <li>Смята се за уникален продукт в България.</li>
-          <li>Свързано е с овцевъдството в Тетевенския Балкан.</li>
-          <li>Получава характерен зеленосин оттенък при зреене.</li>
-          <li>Превърнало се е в символ на Черни Вит.</li>
-        </ul>
-      </article>
+      <a href="/kontakti/">Свържете се с нас</a>
     </section>
   </main>
 </Layout>
 
 <style>
-  .cheese-page {
-    width: min(1120px, calc(100% - 32px));
-    margin: 0 auto;
-    padding: 28px 0 64px;
-  }
-
   .cheese-hero {
-    border-radius: 28px;
-    padding: clamp(40px, 8vw, 90px);
-    margin-bottom: 28px;
+    min-height: calc(100vh - 86px);
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 80px 24px;
     background:
-      linear-gradient(rgba(23,38,29,.6), rgba(23,38,29,.75)),
-      url("/images/cheese.jpg") center / cover;
+      linear-gradient(rgba(8, 18, 13, 0.35), rgba(8, 18, 13, 0.75)),
+      url("/images/zeleno-sirene/hero.jpg") center / cover;
     color: white;
+    overflow: hidden;
   }
 
-  .eyebrow {
+  .cheese-hero__content {
+    width: min(980px, 100%);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cheese-kicker {
+    margin: 0 0 18px;
+    color: var(--color-gold);
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: .08em;
-    font-size: .9rem;
   }
 
   .cheese-hero h1 {
-    margin: 12px 0;
-    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    margin: 0;
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.95;
+    text-wrap: balance;
   }
 
-  .content-grid {
+  .cheese-lead {
+    max-width: 760px;
+    margin: 28px auto 0;
+    font-size: clamp(1.15rem, 2.5vw, 1.7rem);
+    line-height: 1.55;
+  }
+
+  .cheese-button {
+    display: inline-block;
+    margin-top: 34px;
+    padding: 14px 24px;
+    border-radius: 999px;
+    background: var(--color-gold);
+    color: #10291d;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+  }
+
+  .cheese-page {
+    width: min(920px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 72px 0 40px;
+  }
+
+  .chapter {
+    margin: 0 auto 64px;
+  }
+
+  .chapter-number {
+    margin: 0 0 12px;
+    color: var(--color-gold);
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+  }
+
+  .chapter h2 {
+    margin: 0 0 22px;
+    color: var(--color-green-light);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.05;
+  }
+
+  .chapter p {
+    color: #3f3a32;
+    font-size: clamp(1.08rem, 2vw, 1.25rem);
+    line-height: 1.9;
+  }
+
+  .quote-block {
+    margin: 72px 0;
+    padding: clamp(32px, 6vw, 64px);
+    border-radius: 28px;
+    background: var(--color-green);
+    color: white;
+  }
+
+  .quote-block p {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    line-height: 1.15;
+  }
+
+  .process-strip {
     display: grid;
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin: 72px 0;
   }
 
-  .content-card,
-  .fact-box {
-    background: #fffaf0;
-    border-radius: 24px;
-    padding: 30px;
-    border: 1px solid rgba(74,57,35,.12);
-    box-shadow: 0 16px 40px rgba(40,32,20,.08);
+  .process-strip div {
+    min-height: 120px;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    border-radius: 22px;
+    background: var(--color-card);
+    box-shadow: 0 16px 40px rgba(40, 32, 20, 0.08);
+    font-size: 2rem;
+    text-align: center;
   }
 
-  .content-card h2,
-  .fact-box h2 {
-    color: #2f4a35;
-    margin-top: 0;
+  .process-strip span {
+    display: block;
+    margin-top: 8px;
+    color: var(--color-muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
-  .content-card p,
-  .fact-box li {
+  .highlight-chapter {
+    padding: clamp(28px, 5vw, 52px);
+    border-radius: 28px;
+    background: var(--color-card);
+    box-shadow: 0 20px 50px rgba(40, 32, 20, 0.1);
+  }
+
+  .memory-callout {
+    margin-top: 80px;
+    padding: clamp(28px, 5vw, 52px);
+    border-radius: 28px;
+    background: #10291d;
+    color: white;
+    text-align: center;
+  }
+
+  .memory-callout h2 {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+  }
+
+  .memory-callout p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: rgba(255, 250, 240, 0.85);
+    font-size: 1.1rem;
     line-height: 1.8;
   }
-</style>
+
+  .memory-callout a {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: var(--color-gold);
+    color: #10291d;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+  }
+
+  @media (max-width: 700px) {
+    .cheese-hero {
+      min-height: calc(100vh - 82px);
+      padding: 64px 18px;
+    }
+
+    .process-strip {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>  
