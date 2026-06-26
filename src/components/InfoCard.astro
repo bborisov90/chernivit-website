@@ -1,0 +1,16 @@
+---
+const {
+  href = "",
+  icon = "",
+  title,
+  text = "",
+} = Astro.props;
+
+const Tag = href ? "a" : "article";
+---
+
+<Tag href={href || undefined} class="info-card">
+  {icon && <span class="info-card__icon">{icon}</span>}
+  <h3>{title}</h3>
+  {text && <p>{text}</p>}
+</Tag>

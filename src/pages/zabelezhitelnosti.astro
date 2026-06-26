@@ -1,124 +1,152 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import InfoCard from "../components/InfoCard.astro";
 ---
 
-<Layout>
-  <main class="places-page">
-    <section class="places-hero">
-      <p class="eyebrow">Природа, история и красиви гледки</p>
-      <h1>Забележителности</h1>
-      <p>
-        Черни Вит и околностите му предлагат съчетание от природни красоти,
-        исторически места и кътчета, съхранили духа на Тетевенския Балкан.
-      </p>
+<Layout
+  title="За Черни Вит | Между Балкана, реката и традициите"
+  description="Научете повече за село Черни Вит – природа, история, махали, зелено сирене и традиции в Тетевенския Балкан."
+>
+  <PageHero
+    eyebrow="Село в сърцето на Тетевенския Балкан"
+    title="За Черни Вит"
+    text="Между Балкана, реката и вековните традиции — Черни Вит е място, което пази духа на планинския живот."
+    image="/images/village.jpg"
+  />
+
+  <main class="about-page">
+    <section class="about-grid">
+      <article class="text-card">
+        <h2>Село с история, природа и характер</h2>
+
+        <p>
+          Разположено в полите на Централна Стара планина, по течението на
+          река Черни Вит, село Черни Вит е едно от най-живописните кътчета
+          на Тетевенския Балкан.
+        </p>
+
+        <p>
+          Със своите разпръснати махали, богата история, красива природа и
+          съхранени традиции, селото пази духа на стария български планински
+          живот.
+        </p>
+
+        <p>
+          Черни Вит е известно както с природните си дадености и
+          гостоприемните си хора, така и с уникалното зелено сирене — рядък
+          местен продукт, превърнал се в символ на селото.
+        </p>
+
+        <p>
+          Тук посетителите могат да открият спокойствието на планината,
+          чистия въздух, живописни гледки, стари църкви и параклиси,
+          туристически маршрути и места, съхранили спомена за миналото.
+        </p>
+      </article>
+
+      <aside class="facts-card">
+        <h2>Интересни факти</h2>
+
+        <ul>
+          <li>Намира се в подножието на Централна Стара планина.</li>
+          <li>Част е от община Тетевен.</li>
+          <li>През селото преминава река Черни Вит.</li>
+          <li>Известно е със зеленото сирене от Черни Вит.</li>
+          <li>Има множество махали, разположени по склоновете.</li>
+          <li>Районът е подходящ за разходки и планински туризъм.</li>
+        </ul>
+      </aside>
     </section>
 
-    <section class="places-grid">
+    <section class="link-cards">
+      <InfoCard
+        href="/istoria/"
+        icon="📜"
+        title="История"
+        text="Научи повече за миналото на селото."
+      />
 
-      <article class="place-card">
-        <h2>🌊 Река Черни Вит</h2>
-        <p>
-          Реката преминава през селото и е неразделна част от неговата история.
-          През всички сезони тя придава особен облик на Черни Вит и създава
-          красиви места за разходка и почивка.
-        </p>
-      </article>
+      <InfoCard
+        href="/mahali/"
+        icon="🏡"
+        title="Махали"
+        text="Разгледай махалите на Черни Вит."
+      />
 
-      <article class="place-card">
-        <h2>⛰️ Панорамни гледки към Балкана</h2>
-        <p>
-          От различни части на селото и околните височини се разкриват
-          впечатляващи гледки към Тетевенския Балкан, реката и разпръснатите
-          махали.
-        </p>
-      </article>
-
-      <article class="place-card">
-        <h2>🏰 Местността Чертиград</h2>
-        <p>
-          Според исторически сведения тук се е намирало древно тракийско
-          укрепление. Мястото е сред най-интересните исторически обекти в
-          землището на Черни Вит.
-        </p>
-      </article>
-
-      <article class="place-card">
-        <h2>⛪ Църквата в Черни Вит</h2>
-        <p>
-          Храмът е важен духовен център за местната общност и пази спомена за
-          поколения жители на селото.
-        </p>
-      </article>
-
-      <article class="place-card">
-        <h2>🌲 Планински маршрути</h2>
-        <p>
-          Районът предлага възможности за пешеходен туризъм, разходки сред
-          горите и достигане до красиви панорамни места.
-        </p>
-      </article>
-
-      <article class="place-card">
-        <h2>🧀 Зеленото сирене</h2>
-        <p>
-          Макар да е известен като местен продукт, зеленото сирене е и част от
-          културното наследство на Черни Вит и една от най-разпознаваемите
-          местни традиции.
-        </p>
-      </article>
-
+      <InfoCard
+        href="/zabelezhitelnosti/"
+        icon="⛰️"
+        title="Забележителности"
+        text="Открий природни и културни места."
+      />
     </section>
   </main>
 </Layout>
 
 <style>
-  .places-page {
-    width: min(1120px, calc(100% - 32px));
+  .about-page {
+    width: var(--container);
     margin: 0 auto;
-    padding: 28px 0 64px;
+    padding: 0 0 64px;
   }
 
-  .places-hero {
-    border-radius: 28px;
-    padding: clamp(40px, 8vw, 90px);
-    margin-bottom: 28px;
-    background:
-      linear-gradient(rgba(23,38,29,.6), rgba(23,38,29,.75)),
-      url("/images/village.jpg") center / cover;
-    color: white;
-  }
-
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    font-size: .9rem;
-  }
-
-  .places-hero h1 {
-    margin: 12px 0;
-    font-size: clamp(2.2rem, 5vw, 4.5rem);
-  }
-
-  .places-grid {
+  .about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+    gap: 24px;
+    align-items: start;
   }
 
-  .place-card {
-    background: #fffaf0;
+  .text-card,
+  .facts-card {
+    background: var(--color-card);
+    border: 1px solid rgba(74, 57, 35, 0.12);
     border-radius: 24px;
-    padding: 30px;
-    border: 1px solid rgba(74,57,35,.12);
-    box-shadow: 0 16px 40px rgba(40,32,20,.08);
+    box-shadow: 0 16px 40px rgba(40, 32, 20, 0.08);
   }
 
-  .place-card h2 {
+  .text-card {
+    padding: clamp(24px, 4vw, 44px);
+  }
+
+  .text-card h2,
+  .facts-card h2 {
     margin-top: 0;
-    color: #2f4a35;
+    color: var(--color-green-light);
   }
 
-  .place-card p {
-    line-height: 1.8;
+  .text-card p {
+    color: #3f3a32;
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .facts-card {
+    padding: 28px;
+  }
+
+  .facts-card ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+  }
+
+  .facts-card li {
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .link-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  @media (max-width: 820px) {
+    .about-grid,
+    .link-cards {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

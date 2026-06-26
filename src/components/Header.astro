@@ -1,0 +1,29 @@
+---
+const navItems = [
+  { href: "/", label: "Начало" },
+  { href: "/za-cherni-vit/", label: "За Черни Вит" },
+  { href: "/mahali/", label: "Махали" },
+  { href: "/zabelezhitelnosti/", label: "Забележителности" },
+  { href: "/zeleno-sirene/", label: "Зелено сирене" },
+  { href: "/uchilishte/", label: "Училище" },
+  { href: "/galeria/", label: "Галерия" },
+  { href: "/novini/", label: "Новини" },
+  { href: "/kontakti/", label: "Контакти" },
+];
+---
+
+<header class="site-header">
+  <a href="/" class="site-logo">Черни Вит</a>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+  <label for="nav-toggle" class="nav-button" aria-label="Отвори меню">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav class="site-nav" aria-label="Основно меню">
+    {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+  </nav>
+</header>
