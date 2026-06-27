@@ -1,15 +1,250 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
 ---
 
-<BaseLayout
-  title="Училище | Черни Вит"
-  description="Страница за училището в Черни Вит – история, снимки и спомени."
+<Layout
+  title="ОУ „Георги Бенковски“ | Училището в Черни Вит"
+  description="История на ОУ „Георги Бенковски“ в село Черни Вит – образование, музикална традиция и памет."
 >
   <PageHero
-    eyebrow="Училище"
-    title="Училището в Черни Вит"
-    text="Тук ще съберем информация, снимки и спомени, свързани с училището в Черни Вит."
+    eyebrow="Образование, памет и традиции"
+    title="ОУ „Георги Бенковски“"
+    text="Училището в Черни Вит е едно от най-старите в Тетевенска община – място, през което са минали поколения деца от селото и махалите."
+    image="/images/uchilishte/hero.jpg"
   />
-</BaseLayout>
+
+  <main class="school-page">
+    <section class="intro">
+      <article>
+        <h2>Началото на образованието</h2>
+        <p>
+          Началото на училищното дело в Черни Вит е поставено през
+          <strong>1867 година</strong>. Първият учител е
+          <strong>даскал Васил Тилов</strong>, а местните жители подкрепят
+          училището с труд, средства и дарения.
+        </p>
+        <p>
+          Училището се превръща в едно от най-важните места в селото —
+          не само за образование, но и за съхраняване на общността,
+          паметта и връзката между поколенията.
+        </p>
+      </article>
+
+      <aside>
+        <h2>Накратко</h2>
+        <ul>
+          <li>Основано през 1867 г.</li>
+          <li>Първи учител: даскал Васил Тилов</li>
+          <li>Днешната сграда е свързана със строежа от 1925 г.</li>
+          <li>От 1985 г. се развива музикална традиция</li>
+          <li>Училището носи името на Георги Бенковски</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="timeline-section">
+      <h2>Хронология</h2>
+
+      <div class="timeline">
+        <article>
+          <span>1867</span>
+          <h3>Първо училище</h3>
+          <p>
+            Поставено е началото на училищното дело в Черни Вит.
+          </p>
+        </article>
+
+        <article>
+          <span>1925</span>
+          <h3>Нова училищна сграда</h3>
+          <p>
+            Започва изграждането на новата училищна сграда с подкрепата
+            на местните жители.
+          </p>
+        </article>
+
+        <article>
+          <span>1968</span>
+          <h3>Общежитие</h3>
+          <p>
+            Открито е общежитие за деца от махалите и района.
+          </p>
+        </article>
+
+        <article>
+          <span>1985</span>
+          <h3>Музикална традиция</h3>
+          <p>
+            Започва разширено изучаване на народни инструменти и народно пеене.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="music-section">
+      <div>
+        <h2>Музикалната традиция</h2>
+        <p>
+          От 1985 година в училището започва разширено изучаване на народни
+          инструменти и народно пеене. Гайди, кавали, гъдулки и тамбури
+          огласят училищния двор и околността на селото.
+        </p>
+        <p>
+          Музикалните паралелки превръщат училището в разпознаваемо средище
+          на българския фолклор, привличайки деца от различни части на
+          Северна България.
+        </p>
+      </div>
+
+      <div class="music-grid">
+        <article>🪗<span>гайда</span></article>
+        <article>🪈<span>кавал</span></article>
+        <article>🎻<span>гъдулка</span></article>
+        <article>🪕<span>тамбура</span></article>
+        <article>🎶<span>народно пеене</span></article>
+      </div>
+    </section>
+
+    <section class="archive-card">
+      <h2>Бъдещ училищен архив</h2>
+      <p>
+        Тази страница ще бъде допълвана със стари снимки, випуски,
+        документи, учители, директори, грамоти и спомени на бивши ученици.
+      </p>
+      <p>
+        Ако сте учили в ОУ „Георги Бенковски“ или пазите материали, свързани
+        с училището, можете да помогнете те да станат част от дигиталния архив
+        на Черни Вит.
+      </p>
+      <a href="/kontakti/">Изпрати информация</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .school-page {
+    width: var(--container);
+    margin: 0 auto;
+    padding-bottom: 70px;
+  }
+
+  .intro {
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr;
+    gap: 24px;
+  }
+
+  .intro article,
+  .intro aside,
+  .timeline article,
+  .music-section,
+  .archive-card {
+    background: var(--color-card);
+    border-radius: 28px;
+    border: 1px solid rgba(74, 57, 35, 0.12);
+    box-shadow: 0 16px 40px rgba(40, 32, 20, 0.08);
+  }
+
+  .intro article,
+  .music-section,
+  .archive-card {
+    padding: clamp(28px, 5vw, 52px);
+  }
+
+  .intro aside {
+    padding: 28px;
+  }
+
+  h2 {
+    margin-top: 0;
+    color: var(--color-green-light);
+    font-size: clamp(1.9rem, 4vw, 3.2rem);
+    line-height: 1.05;
+  }
+
+  p,
+  li {
+    color: #3f3a32;
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+
+  .timeline-section,
+  .music-section,
+  .archive-card {
+    margin-top: 34px;
+  }
+
+  .timeline {
+    display: grid;
+    gap: 18px;
+  }
+
+  .timeline article {
+    padding: 26px;
+  }
+
+  .timeline span {
+    color: var(--color-gold);
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .timeline h3 {
+    color: var(--color-green-light);
+    margin-bottom: 8px;
+  }
+
+  .music-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .music-grid article {
+    min-height: 120px;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    border-radius: 22px;
+    background: #f7f3ea;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .music-grid span {
+    display: block;
+    margin-top: 8px;
+    color: var(--color-muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .archive-card {
+    text-align: center;
+  }
+
+  .archive-card a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: var(--color-gold);
+    color: var(--color-green);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+  }
+
+  @media (max-width: 820px) {
+    .intro,
+    .music-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

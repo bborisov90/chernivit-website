@@ -1,0 +1,278 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/PageHero.astro";
+import PlacesSubnav from "../../components/PlacesSubnav.astro";
+---
+
+<Layout
+  title="Река Черни Вит | Забележителности около Черни Вит"
+  description="Река Черни Вит – планинска река в Тетевенския Балкан, дала името на селото и оформила природния облик на района."
+>
+  <PageHero
+    eyebrow="Планинска река и символ на селото"
+    title="Река Черни Вит"
+    text="Реката, дала името на селото, събира в себе си суровата красота на Тетевенския Балкан – бързеи, каменисто корито, гори и дълбока планинска долина."
+    image="/images/zabelezhitelnosti/reka-cherni-vit.jpg"
+  />
+
+  <PlacesSubnav />
+
+  <main class="place-page">
+    <section class="place-intro">
+      <article>
+        <h2>Реката, около която се ражда животът</h2>
+        <p>
+          Черни Вит е една от характерните планински реки в Северна България.
+          Тя води началото си от района на Златишко-Тетевенската планина и е
+          лява съставяща на река Вит.
+        </p>
+
+        <p>
+          В горното си течение реката е известна и като Боатинска река. Тя
+          преминава през дълбоки залесени долини, каменисти участъци, бързеи
+          и вирчета, които придават на района силно изразен старопланински
+          характер.
+        </p>
+
+        <p>
+          За Черни Вит реката не е просто природна даденост. Тя е част от
+          името, паметта и ежедневието на селото – източник на вода, прохлада,
+          поминък, истории и връзка с Балкана.
+        </p>
+      </article>
+
+      <aside>
+        <h2>Накратко</h2>
+        <ul>
+          <li>Дължина: около 27 км</li>
+          <li>Водосбор: около 185 км²</li>
+          <li>Начало: северозападно от връх Баба</li>
+          <li>Горно течение: Боатинска река</li>
+          <li>Съединява се с Бели Вит при Тетевен</li>
+          <li>Част от Дунавския водосбор</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="story-section">
+      <h2>От Балкана към Вит</h2>
+      <p>
+        Река Черни Вит извира високо в Стара планина, в район с продължителна
+        снежна покривка и силно изразен планински климат. През пролетта
+        снеготопенето увеличава водите ѝ, а през лятото и есента нивото
+        постепенно спада.
+      </p>
+
+      <p>
+        Течението ѝ преминава през стръмни склонове, гори и каменисти участъци.
+        По пътя си реката събира води от редица притоци и участва във
+        формирането на една от най-живописните долини в Тетевенския край.
+      </p>
+    </section>
+
+    <section class="features-grid">
+      <article>
+        <span>🌲</span>
+        <h3>Планинска долина</h3>
+        <p>
+          Дълбоко врязана, залесена и прохладна – долината на Черни Вит носи
+          усещането за суров и запазен Балкан.
+        </p>
+      </article>
+
+      <article>
+        <span>💧</span>
+        <h3>Чиста вода</h3>
+        <p>
+          Реката е типична студена планинска река с бързо течение, висока
+          прозрачност и каменисто корито.
+        </p>
+      </article>
+
+      <article>
+        <span>🐟</span>
+        <h3>Живот край водата</h3>
+        <p>
+          Водите и крайречните местообитания са важни за местната флора и
+          фауна, включително за студенолюбиви речни видове.
+        </p>
+      </article>
+    </section>
+
+    <section class="story-section">
+      <h2>Значение за Черни Вит</h2>
+      <p>
+        Реката е естествена ос на района. Около нея са се оформяли пътища,
+        махали, места за воденици, ливади и стопански дейности. Тя е свързана
+        с живота на хората не само practically, но и емоционално – като част от
+        пейзажа, звука и паметта на селото.
+      </p>
+
+      <p>
+        Името „Черни Вит“ носи усещане за дълбока, сенчеста и гориста речна
+        долина. Именно този характер прави реката една от най-разпознаваемите
+        природни забележителности в района.
+      </p>
+    </section>
+
+    <section class="photo-section">
+      <h2>Снимки от реката</h2>
+      <p>
+        Тук по-късно можем да добавим снимки от различни участъци – бързеи,
+        мостове, вирчета, притоци и гледки към долината.
+      </p>
+
+      <div class="photo-grid">
+        <img src="/images/zabelezhitelnosti/reka-cherni-vit.jpg" alt="Река Черни Вит" />
+        <img src="/images/zabelezhitelnosti/reka-cherni-vit-2.jpg" alt="Планинско течение на река Черни Вит" />
+        <img src="/images/zabelezhitelnosti/reka-cherni-vit-3.jpg" alt="Долината на река Черни Вит" />
+      </div>
+    </section>
+
+    <section class="back-card">
+      <h2>Още забележителности</h2>
+      <p>
+        Разгледайте и останалите места около Черни Вит – пещери, паметници,
+        крепости, екопътеки и манастири.
+      </p>
+      <a href="/zabelezhitelnosti/">Назад към забележителностите</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .place-page {
+    width: var(--container);
+    margin: 0 auto;
+    padding: 0 0 64px;
+  }
+
+  .place-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .place-intro article,
+  .place-intro aside,
+  .story-section,
+  .features-grid article,
+  .photo-section,
+  .back-card {
+    background: var(--color-card);
+    border: 1px solid rgba(74, 57, 35, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 16px 40px rgba(40, 32, 20, 0.08);
+  }
+
+  .place-intro article,
+  .story-section,
+  .photo-section,
+  .back-card {
+    padding: clamp(26px, 5vw, 52px);
+  }
+
+  .place-intro aside {
+    padding: 28px;
+  }
+
+  h2 {
+    margin-top: 0;
+    color: var(--color-green-light);
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1.08;
+  }
+
+  p {
+    color: #3f3a32;
+    font-size: 1.08rem;
+    line-height: 1.85;
+  }
+
+  .place-intro ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+  }
+
+  .place-intro li {
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .story-section,
+  .photo-section,
+  .back-card {
+    margin-top: 32px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 32px;
+  }
+
+  .features-grid article {
+    padding: 26px;
+  }
+
+  .features-grid span {
+    font-size: 2.2rem;
+  }
+
+  .features-grid h3 {
+    margin: 14px 0 10px;
+    color: var(--color-green-light);
+  }
+
+  .features-grid p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 22px;
+    background: #d8d0c0;
+  }
+
+  .back-card {
+    text-align: center;
+  }
+
+  .back-card a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: var(--color-gold);
+    color: var(--color-green);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+  }
+
+  @media (max-width: 820px) {
+    .place-intro,
+    .features-grid,
+    .photo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .photo-grid img {
+      height: 220px;
+    }
+  }
+</style>

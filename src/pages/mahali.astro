@@ -1,15 +1,165 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
+
+const mahali = [
+  { name: "Байовица", slug: "bayovitsa" },
+  { name: "Свидола", slug: "svidola" },
+  { name: "Ванковци", slug: "vankovtsi" },
+  { name: "Миковци", slug: "mikovtsi" },
+  { name: "Елов дол", slug: "elov-dol" },
+  { name: "Петровци", slug: "petrovtsi" },
+  { name: "Златевци", slug: "zlatevtsi" },
+  { name: "Делиевци", slug: "delievtsi" },
+  { name: "Платуница", slug: "platunitsa" },
+  { name: "Бръшленица", slug: "brashlenitsa" },
+  { name: "Стратевкръш", slug: "stratev-krash" },
+];
 ---
 
-<BaseLayout
-  title="Махали | Черни Вит"
-  description="Махалите на село Черни Вит – места, имена, спомени и истории."
+<Layout
+  title="Махали на Черни Вит | История и местна памет"
+  description="Махалите на село Черни Вит – Байовица, Свидола, Ванковци, Миковци, Елов дол, Петровци, Златевци, Делиевци, Платуница, Бръшленица и Стратевкръш."
 >
   <PageHero
-    eyebrow="Махали"
-    title="Махалите на Черни Вит"
-    text="Тук ще опишем махалите около Черни Вит – Байовица, Свидола, Ванковци, Миковци, Елов дол и други места, свързани с живота на селото."
+    eyebrow="Родове, места и памет"
+    title="Махали"
+    text="Махалите са една от най-важните части от историята на Черни Вит. В тях се пазят родови имена, стари пътища, спомени и местна памет."
+    image="/images/village.jpg"
   />
-</BaseLayout>
+
+  <main class="mahali-page">
+    <section class="intro-card">
+      <h2>Живата карта на селото</h2>
+      <p>
+        Черни Вит не е само центърът на селото. Историята му е разпръсната по
+        махали, склонове, долове и стари пътища. Всяка махала има свое име,
+        свои родове, свои истории и свои спомени.
+      </p>
+      <p>
+        Тази част от сайта ще се развива постепенно. За всяка махала ще
+        събираме снимки, разкази, произход на името, местоположение и спомени
+        от хората, свързани с нея.
+      </p>
+    </section>
+
+    <section class="mahali-grid">
+      {mahali.map((mahala) => (
+        <a href={`/mahali/${mahala.slug}/`} class="mahala-card">
+          <span>🏡</span>
+          <h2>{mahala.name}</h2>
+          <p>Страница в процес на разработка.</p>
+          <strong>Виж повече →</strong>
+        </a>
+      ))}
+    </section>
+
+    <section class="help-card">
+      <h2>Помогнете да съхраним историята</h2>
+      <p>
+        Имате ли снимки, спомени, стари имена на местности или истории,
+        свързани с някоя от махалите? Свържете се с нас, за да ги добавим към
+        дигиталния архив на Черни Вит.
+      </p>
+      <a href="/kontakti/">Изпрати информация</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .mahali-page {
+    width: var(--container);
+    margin: 0 auto;
+    padding-bottom: 70px;
+  }
+
+  .intro-card,
+  .help-card,
+  .mahala-card {
+    background: var(--color-card);
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(74, 57, 35, 0.12);
+  }
+
+  .intro-card,
+  .help-card {
+    padding: clamp(28px, 5vw, 52px);
+  }
+
+  .intro-card h2,
+  .help-card h2 {
+    margin-top: 0;
+    color: var(--color-green-light);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+  }
+
+  .intro-card p,
+  .help-card p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: #3f3a32;
+  }
+
+  .mahali-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 32px;
+  }
+
+  .mahala-card {
+    display: block;
+    padding: 28px;
+    color: inherit;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+
+  .mahala-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(40, 32, 20, 0.14);
+  }
+
+  .mahala-card span {
+    font-size: 2rem;
+  }
+
+  .mahala-card h2 {
+    margin: 14px 0 10px;
+    color: var(--color-green-light);
+  }
+
+  .mahala-card p {
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  .mahala-card strong {
+    color: var(--color-green-light);
+    font-family: Arial, sans-serif;
+  }
+
+  .help-card {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .help-card a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: var(--color-gold);
+    color: var(--color-green);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+  }
+
+  @media (max-width: 820px) {
+    .mahali-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

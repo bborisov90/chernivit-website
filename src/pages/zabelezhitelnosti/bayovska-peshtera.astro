@@ -1,0 +1,217 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/PageHero.astro";
+import PlacesSubnav from "../../components/PlacesSubnav.astro";
+---
+
+<Layout
+  title="Байовска пещера | Забележителности край Черни Вит"
+  description="Байовска пещера край Черни Вит – природна забележителност, част от пещерното богатство на Тетевенския Балкан."
+>
+  <PageHero
+    eyebrow="Пещера край Черни Вит"
+    title="Байовска пещера"
+    text="Една от по-малко познатите пещери в района на Черни Вит – място, което тепърва ще допълваме със снимки, маршрути и местни разкази."
+    image="/images/zabelezhitelnosti/bayovska-peshtera.jpg"
+  />
+
+  <PlacesSubnav />
+  
+  <main class="page">
+    <section class="intro">
+      <div>
+        <h2>Пещера от местната памет</h2>
+
+        <p>
+          Байовска пещера е сред природните обекти в землището на Черни Вит,
+          които заслужават да бъдат описани и съхранени като част от местната
+          памет. За разлика от по-популярните туристически места, тя е
+          по-слабо позната извън района.
+        </p>
+
+        <p>
+          Именно затова тази страница ще бъде развивана постепенно – със
+          снимки, точен маршрут, местни истории, координати и информация за
+          достъпността на мястото.
+        </p>
+      </div>
+
+      <aside>
+        <h2>Накратко</h2>
+        <ul>
+          <li>Пещера в района на Черни Вит</li>
+          <li>По-слабо позната забележителност</li>
+          <li>Подходяща за бъдещо теренно описание</li>
+          <li>Нужни са снимки и GPS координати</li>
+          <li>Страницата ще се допълва</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="story">
+      <h2>Какво предстои да добавим</h2>
+
+      <p>
+        За Байовска пещера е важно информацията да бъде проверена внимателно.
+        Ще бъде добре да се съберат сведения от местни хора, туристи или
+        хора, които познават района.
+      </p>
+
+      <p>
+        В бъдеще тук могат да се добавят описание на маршрута, информация за
+        трудността на достъпа, сезонност, снимки от входа и вътрешността,
+        както и предупреждения за безопасност.
+      </p>
+    </section>
+
+    <section class="cards">
+      <article>
+        <span>🕳️</span>
+        <h3>Пещера</h3>
+        <p>
+          Част от природното богатство около Черни Вит.
+        </p>
+      </article>
+
+      <article>
+        <span>📍</span>
+        <h3>Местоположение</h3>
+        <p>
+          Точните координати ще бъдат добавени след проверка на място.
+        </p>
+      </article>
+
+      <article>
+        <span>🥾</span>
+        <h3>Достъп</h3>
+        <p>
+          Ще бъде описан маршрутът и дали е подходящ за туристи без водач.
+        </p>
+      </article>
+    </section>
+
+    <section class="notice">
+      <h2>Важно</h2>
+      <p>
+        Пещерите могат да бъдат опасни без подходяща подготовка. Не влизайте
+        сами, без екипировка или без човек, който познава района. Информацията
+        тук ще бъде допълвана само след проверка.
+      </p>
+    </section>
+
+    <section class="photos">
+      <h2>Галерия</h2>
+
+      <div class="gallery">
+        <img src="/images/zabelezhitelnosti/bayovska-peshtera.jpg" alt="Байовска пещера край Черни Вит" />
+        <img src="/images/zabelezhitelnosti/bayovska-peshtera-2.jpg" alt="Вход към Байовска пещера" />
+        <img src="/images/zabelezhitelnosti/bayovska-peshtera-3.jpg" alt="Районът около Байовска пещера" />
+      </div>
+    </section>
+
+    <section class="back">
+      <h2>Още забележителности</h2>
+      <p>
+        Разгледайте и останалите природни и исторически места около Черни Вит.
+      </p>
+      <a href="/zabelezhitelnosti/">Всички забележителности</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    width: var(--container);
+    margin: auto;
+    padding-bottom: 70px;
+  }
+
+  .intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+
+  .intro div,
+  .intro aside,
+  .story,
+  .cards article,
+  .notice,
+  .photos,
+  .back {
+    background: var(--color-card);
+    padding: 34px;
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .story,
+  .cards,
+  .notice,
+  .photos,
+  .back {
+    margin-top: 30px;
+  }
+
+  h2 {
+    margin-top: 0;
+    color: var(--color-green-light);
+  }
+
+  p,
+  li {
+    line-height: 1.75;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .cards span {
+    font-size: 2rem;
+  }
+
+  .notice {
+    background: #fff4dc;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 20px;
+    background: #d8d0c0;
+  }
+
+  .back {
+    text-align: center;
+  }
+
+  .back a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background: var(--color-gold);
+    color: var(--color-green);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  @media (max-width: 820px) {
+    .intro,
+    .cards,
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

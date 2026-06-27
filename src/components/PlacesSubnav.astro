@@ -1,0 +1,28 @@
+---
+const items = [
+  { href: "/zabelezhitelnosti/", label: "Всички" },
+  { href: "/zabelezhitelnosti/reka-cherni-vit/", label: "Река Черни Вит" },
+  { href: "/zabelezhitelnosti/benkovska-peshtera/", label: "Бенковска пещера" },
+  { href: "/zabelezhitelnosti/neyo-krachunov/", label: "Нейо Крачунов" },
+  { href: "/zabelezhitelnosti/chertigrad/", label: "Чертиград" },
+  { href: "/zabelezhitelnosti/bayovska-peshtera/", label: "Байовска пещера" },
+  { href: "/zabelezhitelnosti/pod-pruskite-na-vodopada/", label: "Под пръските" },
+  { href: "/zabelezhitelnosti/glozhenski-manastir/", label: "Гложенски манастир" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="places-subnav" aria-label="Забележителности">
+  {items.map((item) => (
+    <a
+      href={item.href}
+      class:list={[
+        "places-subnav__link",
+        currentPath === item.href && "is-active",
+      ]}
+    >
+      {item.label}
+    </a>
+  ))}
+</nav>

@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "./PageHero.astro";
+
+const { name } = Astro.props;
+---
+
+<Layout
+  title={`${name} | Махали на Черни Вит`}
+  description={`Информация за махала ${name} в село Черни Вит.`}
+>
+  <PageHero
+    eyebrow="Махала на Черни Вит"
+    title={name}
+    text="Тази страница е част от бъдещия дигитален архив на махалите в Черни Вит."
+    image="/images/village.jpg"
+  />
+
+  <main class="mahala-page">
+    <section class="content-card">
+      <h2>Страницата е в процес на разработка</h2>
+
+      <p>
+        Събираме информация за махала <strong>{name}</strong> — произход на
+        името, родове, местоположение, стари снимки, спомени и истории.
+      </p>
+
+      <p>
+        Целта е всяка махала на Черни Вит да има своя страница, която пази
+        местната памет за следващите поколения.
+      </p>
+
+      <a href="/kontakti/">Изпрати информация</a>
+    </section>
+
+    <section class="back-card">
+      <h2>Всички махали</h2>
+      <p>Върнете се към списъка с махалите на Черни Вит.</p>
+      <a href="/mahali/">Назад към махалите</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .mahala-page {
+    width: min(920px, calc(100% - 32px));
+    margin: 0 auto;
+    padding-bottom: 70px;
+  }
+
+  .content-card,
+  .back-card {
+    background: var(--color-card);
+    border-radius: 28px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(74, 57, 35, 0.12);
+    padding: clamp(28px, 5vw, 52px);
+  }
+
+  .back-card {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 0;
+    color: var(--color-green-light);
+  }
+
+  p {
+    color: #3f3a32;
+    font-size: 1.08rem;
+    line-height: 1.85;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: var(--color-gold);
+    color: var(--color-green);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+  }
+</style>

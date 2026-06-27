@@ -1,15 +1,164 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
+
+const news = [
+  {
+    title: "Сайтът на Черни Вит е в процес на изграждане",
+    date: "2026",
+    category: "Сайт",
+    text: "Постепенно добавяме информация за историята, махалите, забележителностите, зеленото сирене, училището и живота в селото.",
+  },
+  {
+    title: "Събираме снимки, спомени и истории",
+    date: "Архив",
+    category: "Общност",
+    text: "Ако пазите стари снимки, документи или разкази, свързани с Черни Вит, можете да помогнете те да станат част от дигиталния архив.",
+  },
+  {
+    title: "Предстои допълване на страниците за махалите",
+    date: "Скоро",
+    category: "Махали",
+    text: "Всяка махала ще има собствена страница с информация, снимки, местни истории и спомени.",
+  },
+];
 ---
 
-<BaseLayout
+<Layout
   title="Новини | Черни Вит"
-  description="Новини и актуална информация, свързана със село Черни Вит."
+  description="Новини, съобщения и актуална информация, свързана със село Черни Вит."
 >
   <PageHero
-    eyebrow="Новини"
+    eyebrow="Актуално от селото"
     title="Новини"
-    text="Тук ще публикуваме новини, съобщения, събития и актуална информация, свързана с Черни Вит."
+    text="Тук ще публикуваме новини, съобщения, събития и важна информация, свързана с Черни Вит."
+    image="/images/village.jpg"
   />
-</BaseLayout>
+
+  <main class="news-page">
+    <section class="intro-card">
+      <h2>Новини и съобщения</h2>
+      <p>
+        Тази страница ще събира актуална информация за селото, събития,
+        инициативи, празници, нови материали в сайта и важни съобщения за
+        хората, свързани с Черни Вит.
+      </p>
+    </section>
+
+    <section class="news-grid">
+      {news.map((item) => (
+        <article class="news-card">
+          <div class="news-meta">
+            <span>{item.category}</span>
+            <time>{item.date}</time>
+          </div>
+
+          <h2>{item.title}</h2>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </section>
+
+    <section class="submit-card">
+      <h2>Имате новина или съобщение?</h2>
+      <p>
+        Ако искате да споделите информация за събитие, инициатива, снимки или
+        важна новина, свързана с Черни Вит, можете да се свържете с нас.
+      </p>
+      <a href="/kontakti/">Изпрати информация</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .news-page {
+    width: var(--container);
+    margin: 0 auto;
+    padding-bottom: 70px;
+  }
+
+  .intro-card,
+  .news-card,
+  .submit-card {
+    background: var(--color-card);
+    border-radius: 28px;
+    border: 1px solid rgba(74, 57, 35, 0.12);
+    box-shadow: 0 16px 40px rgba(40, 32, 20, 0.08);
+  }
+
+  .intro-card,
+  .submit-card {
+    padding: clamp(28px, 5vw, 52px);
+  }
+
+  .intro-card h2,
+  .submit-card h2 {
+    margin-top: 0;
+    color: var(--color-green-light);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+  }
+
+  .intro-card p,
+  .submit-card p,
+  .news-card p {
+    color: #3f3a32;
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+
+  .news-grid {
+    display: grid;
+    gap: 22px;
+    margin-top: 32px;
+  }
+
+  .news-card {
+    padding: 30px;
+  }
+
+  .news-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 14px;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .news-meta span {
+    color: var(--color-gold);
+  }
+
+  .news-meta time {
+    color: var(--color-muted);
+  }
+
+  .news-card h2 {
+    margin: 0 0 12px;
+    color: var(--color-green-light);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+  }
+
+  .news-card p {
+    margin-bottom: 0;
+  }
+
+  .submit-card {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .submit-card a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: var(--color-gold);
+    color: var(--color-green);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+  }
+</style>

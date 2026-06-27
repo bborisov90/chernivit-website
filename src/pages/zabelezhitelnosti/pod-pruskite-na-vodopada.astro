@@ -1,0 +1,250 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/PageHero.astro";
+import PlacesSubnav from "../../components/PlacesSubnav.astro";
+---
+
+<Layout
+  title="Екопътека „Под пръските на водопада“ | Забележителности"
+  description="Екопътеката „Под пръските на водопада“ край Тетевен – един от най-красивите туристически маршрути в района."
+>
+
+<PageHero
+  eyebrow="Една от емблемите на Тетевенския Балкан"
+  title="Екопътека „Под пръските на водопада“"
+  text="Маршрут сред букови гори, дървени мостове и шумът на реката, който отвежда до впечатляващия водопад Скока."
+  image="/images/zabelezhitelnosti/pod-pruskite.jpg"
+/>
+
+<PlacesSubnav />
+
+<main class="page">
+
+<section class="intro">
+
+<div>
+
+<h2>Любима разходка в района</h2>
+
+<p>
+
+Екопътеката „Под пръските на водопада“ е една от най-посещаваните
+природни забележителности в община Тетевен. Маршрутът преминава
+по живописното корито на река Козница и отвежда до величествения
+водопад Скока.
+
+</p>
+
+<p>
+
+По пътеката са изградени множество дървени мостове, места за
+почивка и панорамни площадки, които правят прехода подходящ
+както за семейства, така и за любители на природата.
+
+</p>
+
+</div>
+
+<aside>
+
+<h2>Накратко</h2>
+
+<ul>
+
+<li>Дължина: около 4 км</li>
+
+<li>Продължителност: около 2 часа</li>
+
+<li>Подходяща за семейства</li>
+
+<li>Множество мостове</li>
+
+<li>Крайна точка: водопад Скока</li>
+
+</ul>
+
+</aside>
+
+</section>
+
+<section class="cards">
+
+<article>
+
+<span>🌊</span>
+
+<h3>Водопад Скока</h3>
+
+<p>
+
+Крайната точка на маршрута и една от природните емблеми на района.
+
+</p>
+
+</article>
+
+<article>
+
+<span>🌳</span>
+
+<h3>Букова гора</h3>
+
+<p>
+
+Маршрутът преминава през сенчеста гора с богато биоразнообразие.
+
+</p>
+
+</article>
+
+<article>
+
+<span>🥾</span>
+
+<h3>Лесен преход</h3>
+
+<p>
+
+Подходящ за почти всички посетители през по-голямата част от годината.
+
+</p>
+
+</article>
+
+</section>
+
+<section class="story">
+
+<h2>Какво ще видите</h2>
+
+<p>
+
+По цялото протежение на пътеката реката оформя малки водопади,
+бързеи и естествени вирове. Дървените мостове преминават
+непосредствено над водата, което превръща разходката в едно от
+най-живописните преживявания в Тетевенския Балкан.
+
+</p>
+
+</section>
+
+<section class="photos">
+
+<h2>Галерия</h2>
+
+<div class="gallery">
+
+<img src="/images/zabelezhitelnosti/pod-pruskite.jpg">
+
+<img src="/images/zabelezhitelnosti/pod-pruskite-2.jpg">
+
+<img src="/images/zabelezhitelnosti/pod-pruskite-3.jpg">
+
+</div>
+
+</section>
+
+<section class="back">
+
+<h2>Още места в района</h2>
+
+<p>
+
+Освен екопътеката, районът предлага десетки туристически маршрути,
+пещери, реки и исторически обекти.
+
+</p>
+
+<a href="/zabelezhitelnosti/">Всички забележителности</a>
+
+</section>
+
+</main>
+
+</Layout>
+
+<style>
+
+.page{
+width:var(--container);
+margin:auto;
+padding-bottom:70px;
+}
+
+.intro{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:24px;
+}
+
+.intro div,
+.intro aside,
+.cards article,
+.story,
+.photos,
+.back{
+background:var(--color-card);
+padding:34px;
+border-radius:24px;
+box-shadow:0 16px 40px rgba(0,0,0,.08);
+}
+
+.cards,
+.story,
+.photos,
+.back{
+margin-top:30px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.cards span{
+font-size:2rem;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.back{
+text-align:center;
+}
+
+.back a{
+display:inline-block;
+margin-top:18px;
+padding:14px 22px;
+background:var(--color-gold);
+color:var(--color-green);
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+}
+
+@media(max-width:820px){
+
+.intro,
+.cards,
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

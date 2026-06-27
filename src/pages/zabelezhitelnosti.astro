@@ -1,152 +1,226 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
-import InfoCard from "../components/InfoCard.astro";
+import PlacesSubnav from "../components/PlacesSubnav.astro";
+
+const places = [
+  {
+    title: "Река Черни Вит",
+    category: "Природа",
+    image: "/images/zabelezhitelnosti/reka-cherni-vit.jpg",
+    href: "/zabelezhitelnosti/reka-cherni-vit/",
+    text: "Реката, дала името на селото — дълбока, зелена и тясно свързана с живота в Черни Вит.",
+  },
+  {
+    title: "Бенковска пещера",
+    category: "История",
+    image: "/images/zabelezhitelnosti/benkovska-peshtera.jpg",
+    href: "/zabelezhitelnosti/benkovska-peshtera/",
+    text: "Място, свързано с последните дни на Георги Бенковски и пътя на Хвърковатата чета.",
+  },
+  {
+    title: "Паметник на Нейо Крачунов",
+    category: "Памет",
+    image: "/images/zabelezhitelnosti/neyo-krachunov.jpg",
+    href: "/zabelezhitelnosti/neyo-krachunov/",
+    text: "Памет за човека от Черни Вит, помогнал на Бенковски след разгрома на Априлското въстание.",
+  },
+  {
+    title: "Байовска пещера",
+    category: "Пещери",
+    image: "/images/zabelezhitelnosti/bayovska-peshtera.jpg",
+    href: "/zabelezhitelnosti/bayovska-peshtera/",
+    text: "Една от пещерите в землището на Черни Вит, подходяща за бъдещо подробно проучване и описание.",
+  },
+  {
+    title: "Чертиград",
+    category: "Крепост",
+    image: "/images/zabelezhitelnosti/chertigrad.jpg",
+    href: "/zabelezhitelnosti/chertigrad/",
+    text: "Древна крепост върху труднодостъпен скален връх между Черни Вит, Ямна, Брусен и Лопян.",
+  },
+  {
+    title: "Екопътека „Под пръските на водопада“",
+    category: "Маршрут",
+    image: "/images/zabelezhitelnosti/pod-pruskite.jpg",
+    href: "/zabelezhitelnosti/pod-pruskite-na-vodopada/",
+    text: "Красива екопътека край Тетевен, водеща към водопадите Скока — подходяща за разходка в района.",
+  },
+  {
+    title: "Гложенски манастир",
+    category: "Манастир",
+    image: "/images/zabelezhitelnosti/glozhenski-manastir.jpg",
+    href: "/zabelezhitelnosti/glozhenski-manastir/",
+    text: "Един от най-впечатляващите манастири в района, разположен високо над село Гложене.",
+  },
+];
 ---
 
 <Layout
-  title="За Черни Вит | Между Балкана, реката и традициите"
-  description="Научете повече за село Черни Вит – природа, история, махали, зелено сирене и традиции в Тетевенския Балкан."
+  title="Забележителности около Черни Вит | Природа, история и маршрути"
+  description="Забележителности в Черни Вит и района – река Черни Вит, Бенковска пещера, Чертиград, Байовска пещера, паметник на Нейо Крачунов, екопътеки и манастири."
 >
   <PageHero
-    eyebrow="Село в сърцето на Тетевенския Балкан"
-    title="За Черни Вит"
-    text="Между Балкана, реката и вековните традиции — Черни Вит е място, което пази духа на планинския живот."
-    image="/images/village.jpg"
+    eyebrow="Природа, история и памет"
+    title="Забележителности"
+    text="Около Черни Вит се преплитат река, пещери, стари пътеки, крепости, паметници и места, които пазят следи от миналото."
+    image="/images/zabelezhitelnosti/reka-cherni-vit.jpg"
   />
 
-  <main class="about-page">
-    <section class="about-grid">
-      <article class="text-card">
-        <h2>Село с история, природа и характер</h2>
-
-        <p>
-          Разположено в полите на Централна Стара планина, по течението на
-          река Черни Вит, село Черни Вит е едно от най-живописните кътчета
-          на Тетевенския Балкан.
-        </p>
-
-        <p>
-          Със своите разпръснати махали, богата история, красива природа и
-          съхранени традиции, селото пази духа на стария български планински
-          живот.
-        </p>
-
-        <p>
-          Черни Вит е известно както с природните си дадености и
-          гостоприемните си хора, така и с уникалното зелено сирене — рядък
-          местен продукт, превърнал се в символ на селото.
-        </p>
-
-        <p>
-          Тук посетителите могат да открият спокойствието на планината,
-          чистия въздух, живописни гледки, стари църкви и параклиси,
-          туристически маршрути и места, съхранили спомена за миналото.
-        </p>
-      </article>
-
-      <aside class="facts-card">
-        <h2>Интересни факти</h2>
-
-        <ul>
-          <li>Намира се в подножието на Централна Стара планина.</li>
-          <li>Част е от община Тетевен.</li>
-          <li>През селото преминава река Черни Вит.</li>
-          <li>Известно е със зеленото сирене от Черни Вит.</li>
-          <li>Има множество махали, разположени по склоновете.</li>
-          <li>Районът е подходящ за разходки и планински туризъм.</li>
-        </ul>
-      </aside>
+  <PlacesSubnav />
+  
+  <main class="places-page">
+    <section class="intro-card">
+      <h2>Места, които разказват история</h2>
+      <p>
+        Забележителностите около Черни Вит не са само туристически точки на картата.
+        Те са част от паметта на селото — реката, която оформя долината; пещерите,
+        свързани с Априлското въстание; старите маршрути през Балкана; крепостите,
+        останали от древността; и местата, които днес привличат хора, търсещи
+        природа, тишина и история.
+      </p>
     </section>
 
-    <section class="link-cards">
-      <InfoCard
-        href="/istoria/"
-        icon="📜"
-        title="История"
-        text="Научи повече за миналото на селото."
-      />
+    <section class="places-grid">
+      {places.map((place) => (
+        <a href={place.href} class="place-card">
+          <img src={place.image} alt={place.title} />
+          <div>
+            <span>{place.category}</span>
+            <h2>{place.title}</h2>
+            <p>{place.text}</p>
+            <strong>Виж повече →</strong>
+          </div>
+        </a>
+      ))}
+    </section>
 
-      <InfoCard
-        href="/mahali/"
-        icon="🏡"
-        title="Махали"
-        text="Разгледай махалите на Черни Вит."
-      />
-
-      <InfoCard
-        href="/zabelezhitelnosti/"
-        icon="⛰️"
-        title="Забележителности"
-        text="Открий природни и културни места."
-      />
+    <section class="note-card">
+      <h2>Страницата ще се допълва</h2>
+      <p>
+        Ако имате снимки, спомени, GPS координати, стари имена на местности
+        или разкази за тези места, те могат да помогнат тази част от сайта да
+        стане истински дигитален пътеводител за Черни Вит.
+      </p>
+      <a href="/kontakti/">Изпрати информация</a>
     </section>
   </main>
 </Layout>
 
 <style>
-  .about-page {
+  .places-page {
     width: var(--container);
     margin: 0 auto;
     padding: 0 0 64px;
   }
 
-  .about-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
-    gap: 24px;
-    align-items: start;
-  }
-
-  .text-card,
-  .facts-card {
+  .intro-card,
+  .note-card {
     background: var(--color-card);
     border: 1px solid rgba(74, 57, 35, 0.12);
-    border-radius: 24px;
+    border-radius: 28px;
     box-shadow: 0 16px 40px rgba(40, 32, 20, 0.08);
+    padding: clamp(26px, 5vw, 52px);
   }
 
-  .text-card {
-    padding: clamp(24px, 4vw, 44px);
-  }
-
-  .text-card h2,
-  .facts-card h2 {
+  .intro-card h2,
+  .note-card h2 {
     margin-top: 0;
     color: var(--color-green-light);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.05;
   }
 
-  .text-card p {
+  .intro-card p,
+  .note-card p {
     color: #3f3a32;
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     line-height: 1.85;
   }
 
-  .facts-card {
-    padding: 28px;
-  }
-
-  .facts-card ul {
-    padding-left: 20px;
-    margin-bottom: 0;
-  }
-
-  .facts-card li {
-    margin-bottom: 14px;
-    line-height: 1.5;
-  }
-
-  .link-cards {
+  .places-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-top: 28px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 32px;
+  }
+
+  .place-card {
+    overflow: hidden;
+    background: var(--color-card);
+    border: 1px solid rgba(74, 57, 35, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 16px 40px rgba(40, 32, 20, 0.08);
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .place-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(40, 32, 20, 0.14);
+  }
+
+  .place-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    background: #d8d0c0;
+  }
+
+  .place-card div {
+    padding: 26px;
+  }
+
+  .place-card span {
+    color: var(--color-gold);
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .place-card h2 {
+    margin: 10px 0 12px;
+    color: var(--color-green-light);
+    font-size: 1.7rem;
+  }
+
+  .place-card p {
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  .place-card strong {
+    color: var(--color-green-light);
+    font-family: Arial, sans-serif;
+  }
+
+  .note-card {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .note-card a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: var(--color-gold);
+    color: var(--color-green);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
   }
 
   @media (max-width: 820px) {
-    .about-grid,
-    .link-cards {
+    .places-grid {
       grid-template-columns: 1fr;
+    }
+
+    .place-card img {
+      height: 220px;
     }
   }
 </style>

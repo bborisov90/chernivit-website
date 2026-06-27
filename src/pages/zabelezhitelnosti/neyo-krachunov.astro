@@ -1,0 +1,216 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/PageHero.astro";
+import PlacesSubnav from "../../components/PlacesSubnav.astro";
+---
+
+<Layout
+  title="Паметник на Нейо Крачунов | Забележителности"
+  description="Паметникът на Нейо Крачунов край Черни Вит – човекът, спасил Георги Бенковски и неговите сподвижници."
+>
+  <PageHero
+    eyebrow="Памет и признателност"
+    title="Паметникът на Нейо Крачунов"
+    text="Един паметник, който напомня за смелостта на обикновения човек, поставил свободата над собствения си живот."
+    image="/images/zabelezhitelnosti/neyo-krachunov.jpg"
+  />
+
+  <PlacesSubnav />
+
+  <main class="place-page">
+
+    <section class="intro">
+      <article>
+        <h2>Кой е Нейо Крачунов?</h2>
+
+        <p>
+          Нейо Крачунов е родом от Черни Вит и остава в историята като човекът,
+          помогнал на Георги Бенковски и неговите сподвижници след разгрома на
+          Априлското въстание през 1876 година.
+        </p>
+
+        <p>
+          Той ги укрива в района на Бенковската пещера и въпреки жестоките
+          мъчения отказва да разкрие местонахождението им. Историята му е
+          символ на вярност, смелост и саможертва.
+        </p>
+
+      </article>
+
+      <aside>
+        <h2>Накратко</h2>
+
+        <ul>
+          <li>Родом от Черни Вит</li>
+          <li>Участник в събитията след Априлското въстание</li>
+          <li>Помага на Георги Бенковски</li>
+          <li>Отказва да предаде укритите въстаници</li>
+          <li>В негова чест е издигнат паметник край селото</li>
+        </ul>
+
+      </aside>
+    </section>
+
+    <section class="story">
+      <h2>Историята</h2>
+
+      <p>
+        След разгрома на въстанието Георги Бенковски, Захари Стоянов,
+        отец Кирил и Стефо Далматинеца намират убежище в Балкана
+        над Черни Вит.
+      </p>
+
+      <p>
+        Нейо Крачунов им помага да се укрият и осигурява храна.
+        Заловен от османските власти, той е подложен на тежки
+        разпити, но отказва да покаже къде се намират.
+      </p>
+
+      <p>
+        Вместо да предаде укритите хора, той успява да се хвърли в
+        река Черни Вит и оцелява. След Освобождението историята му
+        се превръща в една от най-ценните местни легенди, основана
+        на реални исторически събития.
+      </p>
+
+    </section>
+
+    <section class="cards">
+
+      <article>
+        <span>🗿</span>
+        <h3>Паметник</h3>
+        <p>
+          Издигнат е като знак на признателност към неговата смелост.
+        </p>
+      </article>
+
+      <article>
+        <span>🥾</span>
+        <h3>Изходен пункт</h3>
+        <p>
+          От паметника започва маршрутът към Бенковската пещера и Чертиград.
+        </p>
+      </article>
+
+      <article>
+        <span>🇧🇬</span>
+        <h3>История</h3>
+        <p>
+          Място, което свързва Черни Вит с едни от най-драматичните моменти
+          от Априлското въстание.
+        </p>
+      </article>
+
+    </section>
+
+    <section class="photos">
+
+      <h2>Галерия</h2>
+
+      <div class="gallery">
+
+        <img src="/images/zabelezhitelnosti/neyo-krachunov.jpg" alt="">
+        <img src="/images/zabelezhitelnosti/neyo-krachunov-2.jpg" alt="">
+        <img src="/images/zabelezhitelnosti/neyo-krachunov-3.jpg" alt="">
+
+      </div>
+
+    </section>
+
+    <section class="back">
+
+      <h2>Свързани места</h2>
+
+      <p>
+        След посещението на паметника можете да продължите към
+        Бенковската пещера и крепостта Чертиград по туристическата пътека.
+      </p>
+
+      <a href="/zabelezhitelnosti/">Всички забележителности</a>
+
+    </section>
+
+  </main>
+
+</Layout>
+
+<style>
+.place-page{
+width:var(--container);
+margin:auto;
+padding-bottom:70px;
+}
+
+.intro{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:24px;
+}
+
+.intro article,
+.intro aside,
+.story,
+.cards article,
+.photos,
+.back{
+background:var(--color-card);
+padding:32px;
+border-radius:24px;
+box-shadow:0 16px 40px rgba(0,0,0,.08);
+}
+
+.story,.photos,.back{
+margin-top:28px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:28px;
+}
+
+.cards span{
+font-size:2rem;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.back{
+text-align:center;
+}
+
+.back a{
+display:inline-block;
+margin-top:18px;
+padding:14px 22px;
+border-radius:999px;
+background:var(--color-gold);
+color:var(--color-green);
+text-decoration:none;
+font-weight:700;
+}
+
+@media(max-width:820px){
+
+.intro,
+.cards,
+.gallery{
+grid-template-columns:1fr;
+}
+
+}
+</style>
