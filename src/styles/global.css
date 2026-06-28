@@ -53,6 +53,7 @@ img {
 .site-logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   text-decoration: none;
 }
 
@@ -60,6 +61,7 @@ img {
   display: block;
   height: 64px;
   width: auto;
+  max-width: 100%;
 }
 
 .site-nav {
@@ -278,12 +280,22 @@ img {
 
 /* Mobile */
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .site-header {
     min-height: 82px;
     padding: 0 28px;
   }
 
+  .site-logo {
+    max-width: calc(100% - 70px); /* оставя място за бутона на менюто */
+  }
+
+  .site-logo img {
+    height: 42px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+  }
   .nav-button {
     width: 54px;
     height: 54px;
