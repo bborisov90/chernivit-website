@@ -6,7 +6,11 @@ import "../styles/global.css";
 const {
   title = "Черни Вит",
   description = "Сайт за село Черни Вит – история, махали, забележителности, зелено сирене, галерия и традиции.",
+  image = "/og-image.jpg",
 } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || "https://chernivit-website.pages.dev");
+const imageUrl = new URL(image, Astro.site || "https://chernivit-website.pages.dev");
 ---
 
 <!doctype html>
@@ -14,11 +18,30 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    
-    <meta name="description" content={description} />
-    <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:site_name" content="Черни Вит" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content="bg_BG" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta name="generator" content={Astro.generator} />
   </head>
 
   <body>
