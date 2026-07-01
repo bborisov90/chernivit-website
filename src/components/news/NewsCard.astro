@@ -1,0 +1,78 @@
+---
+const { article } = Astro.props;
+
+const formattedDate = article.data.date.toLocaleDateString("bg-BG", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+---
+
+<a class="news-card" href={`/novini/${article.id}/`}>
+  {article.data.heroImage && (
+    <img
+      src={article.data.heroImage}
+      alt={article.data.title}
+      class="news-image"
+    />
+  )}
+
+  <div class="news-content">
+    <div class="news-meta">
+      <span>{formattedDate}</span>
+    </div>
+
+    <h2>{article.data.title}</h2>
+
+    <p>{article.data.description}</p>
+
+    <span class="read-more">
+      Прочети повече →
+    </span>
+  </div>
+</a>
+
+<style>
+.news-card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  background:var(--color-card);
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(74,57,35,.12);
+  box-shadow:0 16px 40px rgba(40,32,20,.08);
+  transition:.25s;
+}
+
+.news-card:hover{
+  transform:translateY(-4px);
+}
+
+.news-image{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+}
+
+.news-content{
+  padding:30px;
+}
+
+.news-meta{
+  color:var(--color-gold);
+  font-weight:700;
+  font-size:.9rem;
+}
+
+.news-card h2{
+  margin:10px 0 16px;
+}
+
+.read-more{
+  display:inline-block;
+  margin-top:12px;
+  color:var(--color-green-light);
+  font-weight:700;
+}
+</style>
