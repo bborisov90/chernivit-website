@@ -1,0 +1,14 @@
+---
+const { date } = Astro.props;
+const target = new Date(date);
+const now = new Date();
+const diff = target.getTime() - now.getTime();
+const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+---
+
+{diff > 0 && (
+  <div class="event-countdown">
+    <span>До събора остават</span>
+    <strong>{days} дни</strong>
+  </div>
+)}

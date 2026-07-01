@@ -1,0 +1,20 @@
+---
+const { documents = [] } = Astro.props;
+---
+
+{
+  documents.length > 0 && (
+    <section class="documents">
+      <h2>Полезни документи</h2>
+
+      <div class="documents-list">
+        {documents.map((doc) => (
+          <a href={doc.url} target="_blank" class="document-card">
+            <span>📄 {doc.title}</span>
+            <strong>Изтегли →</strong>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}

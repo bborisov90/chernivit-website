@@ -1,3 +1,5 @@
+@import "./news.css";
+
 :root {
   --color-green: #10291d;
   --color-green-light: #2f4a35;
@@ -439,5 +441,5 @@ img {
   .page-hero {
     border-radius: 22px;
   }
-@import "./news.css";
+
 }

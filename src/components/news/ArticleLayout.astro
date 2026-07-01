@@ -1,5 +1,7 @@
 ---
 const { article } = Astro.props;
+import Countdown from "./Countdown.astro";
+import DocumentsList from "./DocumentsList.astro";
 ---
 
 <article class="article-layout">
@@ -22,23 +24,42 @@ const { article } = Astro.props;
       {article.data.title}
     </h1>
 
-    <div class="article-meta">
+    <div class="article-info">
+        <div>
+            <span>Дата</span>
+            <strong>
+            {article.data.eventDate
+                ? article.data.eventDate.toLocaleDateString("bg-BG")
+                : article.data.date.toLocaleDateString("bg-BG")}
+            </strong>
+        </div>
 
-      <span>
-        📅
-        {article.data.date.toLocaleDateString("bg-BG")}
-      </span>
+        {article.data.eventEndDate && (
+            <div>
+            <span>Край</span>
+            <strong>{article.data.eventEndDate.toLocaleDateString("bg-BG")}</strong>
+            </div>
+        )}
 
-      {article.data.location && (
-        <span>
-          📍
-          {article.data.location}
-        </span>
-      )}
+        {article.data.location && (
+            <div>
+            <span>Място</span>
+            <strong>{article.data.location}</strong>
+            </div>
+        )}
 
+        <div>
+            <span>Категория</span>
+            <strong>{article.data.category}</strong>
+        </div>
+        </div>
     </div>
 
-  </div>
+    {article.data.eventDate && (
+      <Countdown date={article.data.eventDate} />
+    )}
+
+    <DocumentsList documents={article.data.documents} />
 
   <div class="article-content">
     <slot />
