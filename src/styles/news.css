@@ -40,3 +40,39 @@
   color:var(--color-green-light);
   font-weight:700;
 }
+
+.article-layout{
+    max-width:900px;
+    margin:auto;
+    padding:3rem 1rem 5rem;
+}
+
+.article-hero{
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    border-radius:24px;
+    margin-bottom:2rem;
+}
+
+.article-category{
+    color:var(--color-gold);
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.article-header h1{
+    margin:.5rem 0 1rem;
+}
+
+.article-meta{
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+    color:var(--color-muted);
+    margin-bottom:2rem;
+}
+
+.article-content{
+    line-height:1.9;
+}

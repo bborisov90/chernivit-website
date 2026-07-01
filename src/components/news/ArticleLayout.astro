@@ -1,0 +1,47 @@
+---
+const { article } = Astro.props;
+---
+
+<article class="article-layout">
+
+  {article.data.heroImage && (
+    <img
+      src={article.data.heroImage}
+      alt={article.data.title}
+      class="article-hero"
+    />
+  )}
+
+  <div class="article-header">
+
+    <p class="article-category">
+      {article.data.category}
+    </p>
+
+    <h1>
+      {article.data.title}
+    </h1>
+
+    <div class="article-meta">
+
+      <span>
+        📅
+        {article.data.date.toLocaleDateString("bg-BG")}
+      </span>
+
+      {article.data.location && (
+        <span>
+          📍
+          {article.data.location}
+        </span>
+      )}
+
+    </div>
+
+  </div>
+
+  <div class="article-content">
+    <slot />
+  </div>
+
+</article>
