@@ -439,4 +439,5 @@ img {
   .page-hero {
     border-radius: 22px;
   }
+@import "./news.css";
 }

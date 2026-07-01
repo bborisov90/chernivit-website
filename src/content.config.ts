@@ -11,14 +11,24 @@ const news = defineCollection({
     pattern: "**/*.{md,mdx}",
     base: "./src/content/news",
   }),
-  schema: baseSchema.extend({
-    date: z.coerce.date(),
-    featured: z.boolean().default(false),
-    heroImage: z.string().optional(),
-    ogImage: z.string().optional(),
-    author: z.string().default("Черни Вит"),
-    tags: z.array(z.string()).default([]),
-  }),
+  sschema: baseSchema.extend({
+      date: z.coerce.date(),
+      featured: z.boolean().default(false),
+      category: z.string().default("Новини"),
+      eventDate: z.coerce.date().optional(),
+      eventEndDate: z.coerce.date().optional(),
+      location: z.string().optional(),
+      heroImage: z.string().optional(),
+      ogImage: z.string().optional(),
+      documents: z.array(
+        z.object({
+          title: z.string(),
+          url: z.string(),
+        })
+      ).default([]),
+      author: z.string().default("Черни Вит"),
+      tags: z.array(z.string()).default([]),
+})
 });
 
 const landmarks = defineCollection({
